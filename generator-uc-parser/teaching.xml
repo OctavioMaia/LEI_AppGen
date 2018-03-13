@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="teaching.xsd">
+    <course>
+        <year>2017/2018</year>
+        <name>Introdução à Programação para Não Informáticos (IPNI)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>4</year>
+        </grad>
+        <students>22</students>
+    </course>
+    <course>
+        <year>2017/2018</year>
+        <name>Processamento de Linguagens (PL)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>3</year>
+        </grad>
+        <students>150</students>
+    </course>
+    <course>
+        <year>2017/2018</year>
+        <name>Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação de
+            Conhecimento (PRC)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>4</year>
+        </grad>
+        <students>18</students>
+    </course>
+    <course>
+        <year>2017/2018</year>
+        <name>Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação da Informação (PRI)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pri2015</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>4</year>
+        </grad>
+        <students>18</students>
+    </course>
+    <course>
+        <year>2017/2018</year>
+        <name>Publicação Eletrónica</name>
+        <url>http://www4.di.uminho.pt/~jcr/AULAS/elpub2015/</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Biomédica</name>
+            <acr>MIEBIOM</acr>
+            <year>4</year>
+        </grad>
+        <students>18</students>
+    </course>
+    <course>
+        <year>2017/2018</year>
+        <name>Engenharia Web</name>
+        <url>http://elearning.uminho.pt</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Telecomunicações e Informática</name>
+            <acr>MIETI</acr>
+            <year>5</year>
+        </grad>
+        <students>15</students>
+    </course>
+    <course>
+        <year>2015/2016</year>
+        <name>Engenharia Web</name>
+        <url>http://elearning.uminho.pt</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>5</year>
+        </grad>
+        <students>8</students>
+    </course>
+    <course>
+        <year>2015/2016</year>
+        <name>Laboratório de Engenharia Informática</name>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>4</year>
+        </grad>
+        <students>8</students>
+        <desc>Projetos realizados:<list>
+                <li>"MEF: desenvolvimento de uma aplicação Web para edição colaborativa de uma ontologia", por Miguel Zenha, Patrícia Barros e Tiago Conceição.</li>
+                <li>"MIEI box: desenvolvimento de uma aplicação Web para armazenamento de recursos didáticos classificados", por Janine Freitas, Jorge Ferreira e Nuno Monteiro.</li>
+                <li>"Encicolpédia musical à medida", por Jorge Sol Ferreira e Tomás Ferreira.</li>
+            </list></desc>
+    </course>
+    <course>
+        <year>2015/2016</year>
+        <name>Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação de Conhecimento (PRC)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/prc2015</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>4</year>
+        </grad>
+        <students>26</students>
+    </course>
+    <course>
+        <year>2015/2016</year>
+        <name>Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação da Informação (PRI)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pri2015</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>4</year>
+        </grad>
+        <students>34</students>
+    </course>
+    <course>
+        <year>2015/2016</year>
+        <name>Publicação Eletrónica</name>
+        <url>http://www4.di.uminho.pt/~jcr/AULAS/elpub2015/</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Biomédica</name>
+            <acr>MIEBIOM</acr>
+            <year>4</year>
+        </grad>
+        <students>20</students>
+    </course>
+    <course>
+        <year>2015/2016</year>
+        <name>Programação Imperativa</name>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>1</year>
+        </grad>
+        <students>320</students>
+    </course>
+    <course>
+        <year>2015/2016</year>
+        <name>Processamento de Linguagens</name>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Informática</name>
+            <acr>MIEI</acr>
+            <year>3</year>
+        </grad>
+        <students>151</students>
+    </course>
+    <course>
+        <year>2014/2015</year>
+        <name>Informática para a Musicologia</name>
+        <grad>
+            <name>Licenciatura em Música</name>
+            <acr>LM</acr>
+            <year>2</year>
+        </grad>
+        <students>4</students>
+    </course>
+    <course>
+        <year>2014/2015</year>
+        <name>Processamento de Linguagens</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pl-lei-2015</url>
+        <grad>
+            <name>Licenciatura em Engenharia Informática</name>
+            <acr>LEI</acr>
+            <year>3</year>
+        </grad>
+        <students>131</students>
+    </course>
+    <course>
+        <year>2014/2015</year>
+        <name>Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação de Conhecimento (PRC)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/prc2015</url>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+        <students>20</students>
+    </course>
+    <course>
+        <year>2014/2015</year>
+        <name>Projeto Integrado</name>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+        <students>6</students>
+        <desc>Projetos desenvolvidos:<list>
+                <li>"Ontoworks: generic sparql endpoint", por André Pereira, Bruno Ferreira e Luís Miguel Pinto.</li>
+            </list></desc>
+    </course>
+    <course>
+        <year>2014/2015</year>
+        <name>Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação da Informação (PRI)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pri2014</url>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+        <students>20</students>
+    </course>
+    <course>
+        <year>2014/2015</year>
+        <name>Publicação Eletrónica</name>
+        <grad>
+            <name>Mestrado Integrado em Engenharia Biomédica</name>
+            <acr>MIEBIOM</acr>
+            <year>4</year>
+        </grad>
+        <students>15</students>
+    </course>
+    <course>
+        <year>2014/2015</year>
+        <name>Algoritmos e Paradigmas de Computação</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ensprog2013</url>
+        <grad>
+            <name>Mestrado em Ensino da Informática</name>
+            <acr>MEINF</acr>
+            <year>1</year>
+        </grad>
+        <students>2</students>
+    </course>
+    <course>
+        <year>2013/2014</year>
+        <name>Engenharia de Linguagens (PED)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/engweb2013</url>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+        <students>22</students>
+    </course>
+    <course>
+        <year>2013/2014</year>
+        <name>Processamento de Linguagens</name>
+        <url>http://elearning.uminho.pt</url>
+        <grad>
+            <name>Licenciatura em Engenharia Informática</name>
+            <acr>LEI</acr>
+            <year>3</year>
+        </grad>
+        <students>120</students>
+    </course>
+    <course>
+        <year>2013/2014</year>
+        <name>Algoritmos e Paradigmas de Computação</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ensprog2013</url>
+        <grad>
+            <name>Mestrado em Ensino da Informática</name>
+            <acr>MEINF</acr>
+            <year>1</year>
+        </grad>
+        <students>6</students>
+    </course>
+    <course>
+        <year>2013/2014</year>
+        <name>Engenharia Web</name>
+        <url>http://elearning.uminho.pt</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>5</year>
+        </grad>
+        <students>18</students>
+    </course>
+    <course>
+        <year>2012/2013</year>
+        <name>UCE30::Engenharia de Linguagens::Processamento e Representação de Conhecimento</name>
+        <url>http://elearning.uminho.pt</url>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+        <students>13</students>
+    </course>
+    <course>
+        <year>2012/2013</year>
+        <name>Processamento de Linguagens</name>
+        <url>http://elearning.uminho.pt</url>
+        <grad>
+            <name>Licenciatura em Engenharia Informática</name>
+            <acr>LEI</acr>
+            <year>3</year>
+        </grad>
+        <students>125</students>
+    </course>
+    <course>
+        <year>2012/2013</year>
+        <name>Algoritmos e Paradigmas de Computação</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ensprog2013</url>
+        <grad>
+            <name>Mestrado em Ensino da Informática</name>
+            <acr>MEINF</acr>
+            <year>1</year>
+        </grad>
+        <students>26</students>
+    </course>
+    <course>
+        <year>2012/2013</year>
+        <name>Ensino da Programação</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ensprog2013</url>
+        <grad>
+            <name>Mestrado em Ensino da Informática</name>
+            <acr>MEINF</acr>
+            <year>1</year>
+        </grad>
+        <students>26</students>
+    </course>
+    <course>
+        <year>2012/2013</year>
+        <name>Engenharia Web</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/engweb2012</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>5</year>
+        </grad>
+        <students>18</students>
+    </course>
+    <course>
+        <year>2012/2013</year>
+        <name>UCE30::Engenharia de Linguagens::Processamento Estruturado de Documentos</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ped2012</url>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+        <students>17</students>
+    </course>
+    <course>
+        <year>2012/2013</year>
+        <name>Representação de Conhecimento</name>
+        <grad>
+            <name>Pós-graduação em Gestão da Informação e Marketing Intelligence</name>
+            <acr>PGIMI</acr>
+            <year>1</year>
+        </grad>
+        <students>12</students>
+    </course>
+    <course>
+        <year>2011/2012</year>
+        <name>Representação de Conhecimento</name>
+        <grad>
+            <name>Pós-graduação em Gestão da Informação e Marketing Intelligence [EGP-UPBS]</name>
+            <acr>PGIMI</acr>
+            <year>1</year>
+        </grad>
+        <students>12</students>
+    </course>
+    <course>
+        <year>2011/2012</year>
+        <name>Engenharia Web</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/engweb2011</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>5</year>
+        </grad>
+        <students>25</students>
+    </course>
+    <course>
+        <year>2011/2012</year>
+        <name>UCE30::Engenharia de Linguagens::Processamento Estruturado de Documentos</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ped2011</url>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+        <students>6</students>
+    </course>
+    <course>
+        <year>2011/2012</year>
+        <name>Programação Imperativa</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pi-lei-2012</url>
+        <grad>
+            <name>Licenciatura em Engenharia Informática</name>
+            <acr>LEI</acr>
+            <year>1</year>
+        </grad>
+        <students>308</students>
+    </course>
+    <course>
+        <year>2011/2012</year>
+        <name>Ensino da Programação</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ensprog2012</url>
+        <grad>
+            <name>Mestrado em Ensino da Informática</name>
+            <acr>MEINF</acr>
+            <year>1</year>
+        </grad>
+        <students>26</students>
+    </course>
+    <course>
+        <year>2011/2012</year>
+        <name>Verão no Campus: "Scratch"</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/vc2012</url>
+        <students>12</students>
+    </course>
+    <course>
+        <year>20010/2011</year>
+        <name>Engenharia Web</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/EngWeb2009</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>5</year>
+        </grad>
+        <students>25</students>
+    </course>
+    <course>
+        <year>20010/2011</year>
+        <name>Laboratórios de Comunicações III</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/lciii2009:2010</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>2</year>
+        </grad>
+        <students>34</students>
+    </course>
+    <course>
+        <year>2010/2011</year>
+        <name>Representação de Conhecimento</name>
+        <grad>
+            <name>Pós-graduação em Gestão da Informação e Marketing Intelligence [EGP-UPBS]</name>
+            <acr>PGIMI</acr>
+            <year>1</year>
+        </grad>
+        <students>18</students>
+    </course>
+    <course>
+        <year>2010/2011</year>
+        <name>Processamento de Linguagens</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pl-lei-2011</url>
+        <grad>
+            <name>Licenciatura em Engenharia Informática</name>
+            <acr>LEI</acr>
+            <year>3</year>
+        </grad>
+        <students>120</students>
+    </course>
+    <course>
+        <year>2010/2011</year>
+        <name>Programação Imperativa</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pi-lei-2011</url>
+        <grad>
+            <name>Licenciatura em Engenharia Informática</name>
+            <acr>LEI</acr>
+            <year>1</year>
+        </grad>
+        <students>344</students>
+    </course>
+    <course>
+        <year>2009/2010</year>
+        <name>Programação Imperativa</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pi-lei-2010</url>
+        <grad>
+            <name>Licenciatura em Engenharia Informática</name>
+            <acr>LEI</acr>
+            <year>1</year>
+        </grad>
+        <students>340</students>
+    </course>
+    <course>
+        <year>2009/2010</year>
+        <name>Programação Imperativa</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pi-lcc-2010</url>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>1</year>
+        </grad>
+        <students>140</students>
+    </course>
+    <course>
+        <year>2009/2010</year>
+        <name>Representação de Conhecimento</name>
+        <grad>
+            <name>Pós-graduação em Gestão da Informação e Marketing Intelligence [EGP-UPBS]</name>
+            <acr>PGIMI</acr>
+            <year>1</year>
+        </grad>
+        <students>15</students>
+    </course>
+    <course>
+        <year>2009/2010</year>
+        <name>Engenharia Web</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/EngWeb2009</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2009/2010</year>
+        <name>Laboratórios de Comunicações III</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/lciii2009:2010</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>2</year>
+        </grad>
+    </course>
+    <course>
+        <year>2008/2009</year>
+        <name>UCE30::Engenharia de Linguagens::Processamento Estruturado de Documentos</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2008</url>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2008/2009</year>
+        <name>Laboratórios de Comunicações III</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/lciii2008</url>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>2</year>
+        </grad>
+    </course>
+    <course>
+        <year>2008/2009</year>
+        <name>Representação de Conhecimento</name>
+        <grad>
+            <name>Pós-graduação em Gestão da Informação e Marketing Intelligence [EGP-UPBS]</name>
+            <acr>PGIMI</acr>
+            <year>1</year>
+        </grad>
+        <students>15</students>
+    </course>
+    <course>
+        <year>2008/2009</year>
+        <name>Programação Imperativa</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pi2009</url>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2008/2009</year>
+        <name>Processamento de Linguagens e Compiladores</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pl-lei-2011</url>
+        <grad>
+            <name>Licenciatura em Engenharia Informática</name>
+            <acr>LEI</acr>
+            <year>3</year>
+        </grad>
+    </course>
+    <course>
+        <year>2007/2008</year>
+        <name>Processamento de Linguagens e Compiladores</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/plc2008</url>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>2</year>
+        </grad>
+    </course>
+    <course>
+        <year>2007/2008</year>
+        <name>Programação Imperativa</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pi2008</url>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2007/2008</year>
+        <name>Programação Funcional</name>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2007/2008</year>
+        <name>Laboratórios de Comunicações III</name>
+        <grad>
+            <name>Mestrado Integrado em Engenharia de Comunicações</name>
+            <acr>MIECOM</acr>
+            <year>2</year>
+        </grad>
+    </course>
+    <course>
+        <year>2007/2008</year>
+        <name>UCE30::Engenharia de Linguagens::Processamento Estruturado de Documentos</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2007</url>
+        <grad>
+            <name>Mestrado em Engenharia Informática</name>
+            <acr>MEI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2006/2007</year>
+        <name>No courses, 100% research.</name>
+    </course>
+    <course>
+        <year>2005/2006</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2005</url>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2005/2006</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2005</url>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2005/2006</year>
+        <name>Processamento Estruturado de Documentos</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/MICEI2005</url>
+        <grad>
+            <name>Mestrado em Informática / Curso de Especialização em Informática</name>
+            <acr>MICEI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2005/2006</year>
+        <name>Programação Funcional</name>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2005/2006</year>
+        <name>Programação Imperativa</name>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2005/2006</year>
+        <name>Programação Imperativa</name>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2004/2005</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2004/2005</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2004/2005</year>
+        <name>Processamento Estruturado de Documentos</name>
+        <grad>
+            <name>Mestrado em Informática / Curso de Especialização em Informática</name>
+            <acr>MICEI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2004/2005</year>
+        <name>Programação Imperativa</name>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2004/2005</year>
+        <name>Programação Imperativa</name>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2004/2005</year>
+        <name>Processamento de Linguagens I</name>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>2</year>
+        </grad>
+    </course>
+    <course>
+        <year>2004/2005</year>
+        <name>Processamento de Linguagens I</name>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>2</year>
+        </grad>
+    </course>
+    <course>
+        <year>2003/2004</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2003/</url>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2003/2004</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2003/</url>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2003/2004</year>
+        <name>Processamento Estruturado de Documentos</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/MICEI2003/</url>
+        <grad>
+            <name>Mestrado em Informática / Curso de Especialização em Informática</name>
+            <acr>MICEI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2003/2004</year>
+        <name>Programação Imperativa</name>
+        <grad>
+            <name>Licenciatura em Ciências da Computação</name>
+            <acr>LCC</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2003/2004</year>
+        <name>Programação Imperativa</name>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2003/2004</year>
+        <name>Linguagens de Anotação de Documentos</name>
+        <grad>
+            <name>Línguas Estranjeiras Aplicadas</name>
+            <acr>LEA</acr>
+            <year>3</year>
+        </grad>
+    </course>
+    <course>
+        <year>2002/2003</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ped2002/ped2002.html</url>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2002/2003</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ped2002/ped2002.html</url>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2002/2003</year>
+        <name>Processamento Estruturado de Documentos</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/micei2002/index.html</url>
+        <grad>
+            <name>Mestrado em Informática / Curso de Especialização em Informática</name>
+            <acr>MICEI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2002/2003</year>
+        <name>Linguagens de Anotação de Documentos</name>
+        <url>http://www.di.uminho.pt/~jcr/XML/CURSOS/LAD2003/LAD2003.htm</url>
+        <grad>
+            <name>Línguas Estranjeiras Aplicadas</name>
+            <acr>LEA</acr>
+            <year>3</year>
+        </grad>
+        <students>14</students>
+    </course>
+    <course>
+        <year>2001/2002</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ped2001/ped2001.html</url>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2001/2002</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ped2001/ped2001.html</url>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2001/2002</year>
+        <name>Processamento de Linguagens I</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pli2002/pli2002.html</url>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>2</year>
+        </grad>
+        <students>30</students>
+    </course>
+    <course>
+        <year>2001/2002</year>
+        <name>Processamento de Linguagens I</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pli2002/pli2002.html</url>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>3</year>
+        </grad>
+        <students>45</students>
+    </course>
+    <course>
+        <year>2000/2001</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ped2000/ped.html</url>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2000/2001</year>
+        <name>Processamento Estruturado de Documentos (Opção IV)</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/ped2000/ped.html</url>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>5</year>
+        </grad>
+    </course>
+    <course>
+        <year>2000/2001</year>
+        <name>Processamento de Linguagens I</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pli2001</url>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>2</year>
+        </grad>
+    </course>
+    <course>
+        <year>2000/2001</year>
+        <name>Processamento de Linguagens I</name>
+        <url>http://www.di.uminho.pt/~jcr/AULAS/pli2001</url>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>3</year>
+        </grad>
+    </course>
+    <course>
+        <year>2000/2001</year>
+        <name>Paradigmas de Programação I</name>
+        <grad>
+            <name>Licenciatura em Engenharia de Sistemas e Informática</name>
+            <acr>LESI</acr>
+            <year>1</year>
+        </grad>
+    </course>
+    <course>
+        <year>2000/2001</year>
+        <name>Paradigmas de Programação I</name>
+        <grad>
+            <name>Licenciatura em Matemática e Ciências da Computação</name>
+            <acr>LMCC</acr>
+            <year>1</year>
+        </grad>
+    </course>
+</courses>

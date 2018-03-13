@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Octávio Maia",
+      "authorEmail": "octaviojmaia@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
