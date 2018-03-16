@@ -1,0 +1,2080 @@
+{
+    "_declaration": {
+        "_attributes": {
+            "version": "1.0",
+            "encoding": "UTF-8"
+        }
+    },
+    "courses": {
+        "_attributes": {
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xsi:noNamespaceSchemaLocation": "teaching.xsd"
+        },
+        "course": [
+            {
+                "year": {
+                    "_text": "2017/2018"
+                },
+                "name": {
+                    "_text": "Introdução à Programação para Não Informáticos (IPNI)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "22"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2017/2018"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens (PL)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                },
+                "students": {
+                    "_text": "150"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2017/2018"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação de\n            Conhecimento (PRC)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "18"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2017/2018"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação da Informação (PRI)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pri2015"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "18"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2017/2018"
+                },
+                "name": {
+                    "_text": "Publicação Eletrónica"
+                },
+                "url": {
+                    "_text": "http://www4.di.uminho.pt/~jcr/AULAS/elpub2015/"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Biomédica"
+                    },
+                    "acr": {
+                        "_text": "MIEBIOM"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "18"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2017/2018"
+                },
+                "name": {
+                    "_text": "Engenharia Web"
+                },
+                "url": {
+                    "_text": "http://elearning.uminho.pt"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Telecomunicações e Informática"
+                    },
+                    "acr": {
+                        "_text": "MIETI"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                },
+                "students": {
+                    "_text": "15"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2015/2016"
+                },
+                "name": {
+                    "_text": "Engenharia Web"
+                },
+                "url": {
+                    "_text": "http://elearning.uminho.pt"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                },
+                "students": {
+                    "_text": "8"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2015/2016"
+                },
+                "name": {
+                    "_text": "Laboratório de Engenharia Informática"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "8"
+                },
+                "desc": {
+                    "_text": "Projetos realizados:",
+                    "list": {
+                        "li": [
+                            {
+                                "_text": "\"MEF: desenvolvimento de uma aplicação Web para edição colaborativa de uma ontologia\", por Miguel Zenha, Patrícia Barros e Tiago Conceição."
+                            },
+                            {
+                                "_text": "\"MIEI box: desenvolvimento de uma aplicação Web para armazenamento de recursos didáticos classificados\", por Janine Freitas, Jorge Ferreira e Nuno Monteiro."
+                            },
+                            {
+                                "_text": "\"Encicolpédia musical à medida\", por Jorge Sol Ferreira e Tomás Ferreira."
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2015/2016"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação de Conhecimento (PRC)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/prc2015"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "26"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2015/2016"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação da Informação (PRI)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pri2015"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "34"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2015/2016"
+                },
+                "name": {
+                    "_text": "Publicação Eletrónica"
+                },
+                "url": {
+                    "_text": "http://www4.di.uminho.pt/~jcr/AULAS/elpub2015/"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Biomédica"
+                    },
+                    "acr": {
+                        "_text": "MIEBIOM"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "20"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2015/2016"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "320"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2015/2016"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MIEI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                },
+                "students": {
+                    "_text": "151"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2014/2015"
+                },
+                "name": {
+                    "_text": "Informática para a Musicologia"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Música"
+                    },
+                    "acr": {
+                        "_text": "LM"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                },
+                "students": {
+                    "_text": "4"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2014/2015"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pl-lei-2015"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "LEI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                },
+                "students": {
+                    "_text": "131"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2014/2015"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação de Conhecimento (PRC)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/prc2015"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "20"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2014/2015"
+                },
+                "name": {
+                    "_text": "Projeto Integrado"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "6"
+                },
+                "desc": {
+                    "_text": "Projetos desenvolvidos:",
+                    "list": {
+                        "li": {
+                            "_text": "\"Ontoworks: generic sparql endpoint\", por André Pereira, Bruno Ferreira e Luís Miguel Pinto."
+                        }
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2014/2015"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens e Conhecimento (PLC)::Processamento e Representação da Informação (PRI)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pri2014"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "20"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2014/2015"
+                },
+                "name": {
+                    "_text": "Publicação Eletrónica"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia Biomédica"
+                    },
+                    "acr": {
+                        "_text": "MIEBIOM"
+                    },
+                    "year": {
+                        "_text": "4"
+                    }
+                },
+                "students": {
+                    "_text": "15"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2014/2015"
+                },
+                "name": {
+                    "_text": "Algoritmos e Paradigmas de Computação"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ensprog2013"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Ensino da Informática"
+                    },
+                    "acr": {
+                        "_text": "MEINF"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "2"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2013/2014"
+                },
+                "name": {
+                    "_text": "Engenharia de Linguagens (PED)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/engweb2013"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "22"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2013/2014"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens"
+                },
+                "url": {
+                    "_text": "http://elearning.uminho.pt"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "LEI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                },
+                "students": {
+                    "_text": "120"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2013/2014"
+                },
+                "name": {
+                    "_text": "Algoritmos e Paradigmas de Computação"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ensprog2013"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Ensino da Informática"
+                    },
+                    "acr": {
+                        "_text": "MEINF"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "6"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2013/2014"
+                },
+                "name": {
+                    "_text": "Engenharia Web"
+                },
+                "url": {
+                    "_text": "http://elearning.uminho.pt"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                },
+                "students": {
+                    "_text": "18"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2012/2013"
+                },
+                "name": {
+                    "_text": "UCE30::Engenharia de Linguagens::Processamento e Representação de Conhecimento"
+                },
+                "url": {
+                    "_text": "http://elearning.uminho.pt"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "13"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2012/2013"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens"
+                },
+                "url": {
+                    "_text": "http://elearning.uminho.pt"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "LEI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                },
+                "students": {
+                    "_text": "125"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2012/2013"
+                },
+                "name": {
+                    "_text": "Algoritmos e Paradigmas de Computação"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ensprog2013"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Ensino da Informática"
+                    },
+                    "acr": {
+                        "_text": "MEINF"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "26"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2012/2013"
+                },
+                "name": {
+                    "_text": "Ensino da Programação"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ensprog2013"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Ensino da Informática"
+                    },
+                    "acr": {
+                        "_text": "MEINF"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "26"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2012/2013"
+                },
+                "name": {
+                    "_text": "Engenharia Web"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/engweb2012"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                },
+                "students": {
+                    "_text": "18"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2012/2013"
+                },
+                "name": {
+                    "_text": "UCE30::Engenharia de Linguagens::Processamento Estruturado de Documentos"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ped2012"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "17"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2012/2013"
+                },
+                "name": {
+                    "_text": "Representação de Conhecimento"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Pós-graduação em Gestão da Informação e Marketing Intelligence"
+                    },
+                    "acr": {
+                        "_text": "PGIMI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "12"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2011/2012"
+                },
+                "name": {
+                    "_text": "Representação de Conhecimento"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Pós-graduação em Gestão da Informação e Marketing Intelligence [EGP-UPBS]"
+                    },
+                    "acr": {
+                        "_text": "PGIMI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "12"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2011/2012"
+                },
+                "name": {
+                    "_text": "Engenharia Web"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/engweb2011"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                },
+                "students": {
+                    "_text": "25"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2011/2012"
+                },
+                "name": {
+                    "_text": "UCE30::Engenharia de Linguagens::Processamento Estruturado de Documentos"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ped2011"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "6"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2011/2012"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pi-lei-2012"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "LEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "308"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2011/2012"
+                },
+                "name": {
+                    "_text": "Ensino da Programação"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ensprog2012"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Ensino da Informática"
+                    },
+                    "acr": {
+                        "_text": "MEINF"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "26"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2011/2012"
+                },
+                "name": {
+                    "_text": "Verão no Campus: \"Scratch\""
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/vc2012"
+                },
+                "students": {
+                    "_text": "12"
+                }
+            },
+            {
+                "year": {
+                    "_text": "20010/2011"
+                },
+                "name": {
+                    "_text": "Engenharia Web"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/EngWeb2009"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                },
+                "students": {
+                    "_text": "25"
+                }
+            },
+            {
+                "year": {
+                    "_text": "20010/2011"
+                },
+                "name": {
+                    "_text": "Laboratórios de Comunicações III"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/lciii2009:2010"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                },
+                "students": {
+                    "_text": "34"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2010/2011"
+                },
+                "name": {
+                    "_text": "Representação de Conhecimento"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Pós-graduação em Gestão da Informação e Marketing Intelligence [EGP-UPBS]"
+                    },
+                    "acr": {
+                        "_text": "PGIMI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "18"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2010/2011"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pl-lei-2011"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "LEI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                },
+                "students": {
+                    "_text": "120"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2010/2011"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pi-lei-2011"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "LEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "344"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2009/2010"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pi-lei-2010"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "LEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "340"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2009/2010"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pi-lcc-2010"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "140"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2009/2010"
+                },
+                "name": {
+                    "_text": "Representação de Conhecimento"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Pós-graduação em Gestão da Informação e Marketing Intelligence [EGP-UPBS]"
+                    },
+                    "acr": {
+                        "_text": "PGIMI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "15"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2009/2010"
+                },
+                "name": {
+                    "_text": "Engenharia Web"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/EngWeb2009"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2009/2010"
+                },
+                "name": {
+                    "_text": "Laboratórios de Comunicações III"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/lciii2009:2010"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2008/2009"
+                },
+                "name": {
+                    "_text": "UCE30::Engenharia de Linguagens::Processamento Estruturado de Documentos"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2008"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2008/2009"
+                },
+                "name": {
+                    "_text": "Laboratórios de Comunicações III"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/lciii2008"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2008/2009"
+                },
+                "name": {
+                    "_text": "Representação de Conhecimento"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Pós-graduação em Gestão da Informação e Marketing Intelligence [EGP-UPBS]"
+                    },
+                    "acr": {
+                        "_text": "PGIMI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                },
+                "students": {
+                    "_text": "15"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2008/2009"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pi2009"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2008/2009"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens e Compiladores"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pl-lei-2011"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "LEI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2007/2008"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens e Compiladores"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/plc2008"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2007/2008"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pi2008"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2007/2008"
+                },
+                "name": {
+                    "_text": "Programação Funcional"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2007/2008"
+                },
+                "name": {
+                    "_text": "Laboratórios de Comunicações III"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado Integrado em Engenharia de Comunicações"
+                    },
+                    "acr": {
+                        "_text": "MIECOM"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2007/2008"
+                },
+                "name": {
+                    "_text": "UCE30::Engenharia de Linguagens::Processamento Estruturado de Documentos"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2007"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Engenharia Informática"
+                    },
+                    "acr": {
+                        "_text": "MEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2006/2007"
+                },
+                "name": {
+                    "_text": "No courses, 100% research."
+                }
+            },
+            {
+                "year": {
+                    "_text": "2005/2006"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2005"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2005/2006"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2005"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2005/2006"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/MICEI2005"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Informática / Curso de Especialização em Informática"
+                    },
+                    "acr": {
+                        "_text": "MICEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2005/2006"
+                },
+                "name": {
+                    "_text": "Programação Funcional"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2005/2006"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2005/2006"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2004/2005"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2004/2005"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2004/2005"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Informática / Curso de Especialização em Informática"
+                    },
+                    "acr": {
+                        "_text": "MICEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2004/2005"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2004/2005"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2004/2005"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens I"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2004/2005"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens I"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2003/2004"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2003/"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2003/2004"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2003/"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2003/2004"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/MICEI2003/"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Informática / Curso de Especialização em Informática"
+                    },
+                    "acr": {
+                        "_text": "MICEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2003/2004"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2003/2004"
+                },
+                "name": {
+                    "_text": "Programação Imperativa"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2003/2004"
+                },
+                "name": {
+                    "_text": "Linguagens de Anotação de Documentos"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Línguas Estranjeiras Aplicadas"
+                    },
+                    "acr": {
+                        "_text": "LEA"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2002/2003"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ped2002/ped2002.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2002/2003"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ped2002/ped2002.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2002/2003"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/micei2002/index.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Mestrado em Informática / Curso de Especialização em Informática"
+                    },
+                    "acr": {
+                        "_text": "MICEI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2002/2003"
+                },
+                "name": {
+                    "_text": "Linguagens de Anotação de Documentos"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/XML/CURSOS/LAD2003/LAD2003.htm"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Línguas Estranjeiras Aplicadas"
+                    },
+                    "acr": {
+                        "_text": "LEA"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                },
+                "students": {
+                    "_text": "14"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2001/2002"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ped2001/ped2001.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2001/2002"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ped2001/ped2001.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2001/2002"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens I"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pli2002/pli2002.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                },
+                "students": {
+                    "_text": "30"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2001/2002"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens I"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pli2002/pli2002.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                },
+                "students": {
+                    "_text": "45"
+                }
+            },
+            {
+                "year": {
+                    "_text": "2000/2001"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ped2000/ped.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2000/2001"
+                },
+                "name": {
+                    "_text": "Processamento Estruturado de Documentos (Opção IV)"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/ped2000/ped.html"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "5"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2000/2001"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens I"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pli2001"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "2"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2000/2001"
+                },
+                "name": {
+                    "_text": "Processamento de Linguagens I"
+                },
+                "url": {
+                    "_text": "http://www.di.uminho.pt/~jcr/AULAS/pli2001"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "3"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2000/2001"
+                },
+                "name": {
+                    "_text": "Paradigmas de Programação I"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Engenharia de Sistemas e Informática"
+                    },
+                    "acr": {
+                        "_text": "LESI"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            },
+            {
+                "year": {
+                    "_text": "2000/2001"
+                },
+                "name": {
+                    "_text": "Paradigmas de Programação I"
+                },
+                "grad": {
+                    "name": {
+                        "_text": "Licenciatura em Matemática e Ciências da Computação"
+                    },
+                    "acr": {
+                        "_text": "LMCC"
+                    },
+                    "year": {
+                        "_text": "1"
+                    }
+                }
+            }
+        ]
+    }
+}

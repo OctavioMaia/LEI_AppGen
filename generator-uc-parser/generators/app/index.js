@@ -2,7 +2,8 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const xml2js = require('xml2js');
+const parser = require('xml-js');
+const fs = require('fs');
 
 module.exports = class extends Generator {
   prompting() {
@@ -17,12 +18,6 @@ module.exports = class extends Generator {
         name: 'someAnswer',
         message: 'Would you like to parse a XML file?',
         default: true
-      },
-      {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to parse a JSON file?',
-        default: true
       }
     ];
 
@@ -35,15 +30,13 @@ module.exports = class extends Generator {
   paths() {
     var path = this.destinationPath('teaching.xml');
     var xml = this.fs.read(path);
-    var parser = new xml2js.Parser();
-    parser.parseString(xml, function(err, result) {
-      if(!err){
-        var resultados = result.courses.course;
-        for(var item in resultados){
-          console.log(resultados[item].name[0])
-        }
-        console.log('Done');
+    var json = parser.xml2json(xml, {compact: true, spaces: 4});
+    
+    fs.writeFile("teaching.json",json, function(err) {
+      if(err) {
+          return console.log(err);
       }
-    });
+      console.log("The file was saved!");
+    }); 
   }
 };
