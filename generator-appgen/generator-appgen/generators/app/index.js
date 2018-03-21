@@ -14,7 +14,7 @@ module.exports = class extends Generator {
       {
         name: 'dbName',
         message: 'Database Name',
-        default: 'myDb'
+        default: 'local'
       },
       {
         name: 'dbHost',
@@ -38,16 +38,9 @@ module.exports = class extends Generator {
         default: 27017
       },
       {
-        type: 'confirm',
-        name: 'useHeroku',
-        message: 'Will you be using heroku?',
-        default: true
-      },
-      {
-        type: 'confirm',
-        name: 'useHeroku',
-        message: 'Import your collection',
-        default: true
+        name: 'json',
+        message: 'JSON file you wish to import',
+        default: 'teaching.json'
       }
     ];
 
@@ -57,16 +50,12 @@ module.exports = class extends Generator {
       this.dbUser = props.dbUser;
       this.dbPassword = props.dbPassword;
       this.dbPort = props.dbPort;
-      this.useHeroku = props.useHeroku;
+      this.json = props.json;
     });
   }
 
  
   writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
     this.fs.copyTpl(
       this.templatePath('index.html'),
       this.destinationPath('public/index.html'),
@@ -82,12 +71,8 @@ module.exports = class extends Generator {
         dbUser: this.dbUser,
         dbPort: this.dbPort,
         dbPassword: this.dbPassword,
-        useHeroku: this.useHeroku}
+        json: this.json
+      }
     );
-  }
-
-  install() {
-    //console.log('Installing dependencies...');
-    //this.installDependencies();
   }
 };

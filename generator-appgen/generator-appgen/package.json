@@ -43,7 +43,8 @@
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "start": "node ./public/server.js"
   },
   "lint-staged": {
     "*.js": [
