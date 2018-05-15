@@ -3,12 +3,13 @@ var fs = require('fs')
 var UC = require('../generators/app/templates/uc');
 
 var config = {
-  "db": "local",  
+  "db": "appgen",  
   "host": "localhost",  
   "user": "",
   "pw": "",
   "port": "27017",
-  "file": "teaching.json"
+  "collectionname": "alfredo",
+  "collectioncrud": "n",
 };
 
 var port = (config.port.length > 0) ? ":" + config.port : '';
@@ -18,21 +19,17 @@ var uristring = "mongodb://" + login + config.host + port + "/" + config.db;
 // Connect to Database
 mongoose.Promise = global.Promise
 mongoose.connect(uristring, function (err, res) {
-  if(err){
-    console.log('Error connecting to: ' + uristring + '. ' + err);
-  }else{
-    console.log('Successfully connected to: ' + uristring);
-    console.log('Importing ' + config.file)
-
-    var obj = JSON.parse(fs.readFileSync(config.file, 'utf8'));
-    UC.collection.insert(obj, function(err,result) {
-      if(err){
-        console.log(err)
-      }else{
-        console.log('Imported JSON file with success.')
-      }
-   });
-  }
+	console.log('Successfully connected to: ' + uristring);
+    if(config.collectionname!=''){
+    	res.createCollection(config.collectionname, function(err, result) {
+		if (err) 
+			throw err;
+        else
+          	console.log("Collection " + config.collectionname + " is created!");
+    	});
+	}
+	if(config.collectioncrud=='y'){ 
+    }
 });
 
 exports.mongoose = mongoose;

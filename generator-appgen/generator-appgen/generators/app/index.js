@@ -14,7 +14,7 @@ module.exports = class extends Generator {
       {
         name: 'dbName',
         message: 'Database Name',
-        default: 'local'
+        default: 'appgen'
       },
       {
         name: 'dbHost',
