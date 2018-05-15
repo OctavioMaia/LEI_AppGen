@@ -3,13 +3,13 @@ var fs = require('fs')
 var UC = require('../generators/app/templates/uc');
 
 var config = {
-  "db": "<%= dbName %>",  
-  "host": "<%= dbHost %>",  
-  "user": "<%= dbUser %>",
-  "pw": "<%= dbPassword %>",
-  "port": "<%= dbPort %>",
-  "collectionname": "<%= collectionname %>",
-  "collectioncrud": "<%= collectioncrud %>",
+  "db": "local",  
+  "host": "localhost",  
+  "user": "",
+  "pw": "",
+  "port": "27017",
+  "collectionname": "colletion",
+  "collectioncrud": "y",
 };
 
 var port = (config.port.length > 0) ? ":" + config.port : '';

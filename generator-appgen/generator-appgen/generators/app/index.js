@@ -7,7 +7,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the remarkable ${chalk.red('generator-appgen')} generator!`)
+      yosay(`Welcome to the remarkable ${chalk.red('AppGen')} generator!`)
     );
 
     const prompts = [
@@ -36,11 +36,33 @@ module.exports = class extends Generator {
         name: 'dbPort',
         message: 'Database Port',
         default: 27017
-      },
+      },/* ,
       {
         name: 'json',
         message: 'JSON file you wish to import',
         default: 'teaching.json'
+      } */
+      {
+        name: 'collection',
+        message: 'Do you wish to create a collection? (y/n) ',
+        default: 'n'
+      },
+      {
+        when: function (response) {
+          return response.collection == 'y';
+        },  
+        name: 'collectionname',
+        message: 'How should this collection be named? ',
+        default: 'colletion'
+      }
+      ,
+      {
+        when: function (response) {
+          return response.collectionname != '' && response.collection == 'y';
+        },  
+        name: 'collectioncrud',
+        message: 'Should I create CRUD methods for this collection? (y/n) ',
+        default: 'y'
       }
     ];
 
@@ -50,7 +72,9 @@ module.exports = class extends Generator {
       this.dbUser = props.dbUser;
       this.dbPassword = props.dbPassword;
       this.dbPort = props.dbPort;
-      this.json = props.json;
+      //this.json = props.json;
+      this.collectionname = props.collectionname;
+      this.collectioncrud = props.collectioncrud;
     });
   }
 
@@ -71,7 +95,9 @@ module.exports = class extends Generator {
         dbUser: this.dbUser,
         dbPort: this.dbPort,
         dbPassword: this.dbPassword,
-        json: this.json
+        //json: this.json
+        collectionname: this.collectionname,
+        collectioncrud: this.collectioncrud
       }
     );
   }
