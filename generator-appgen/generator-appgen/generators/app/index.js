@@ -1,7 +1,6 @@
 var Generator = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
-var ejs = require('ejs')
 
 module.exports = class extends Generator {
   prompting() {
@@ -54,8 +53,7 @@ module.exports = class extends Generator {
         name: 'collectionname',
         message: 'How should this collection be named? ',
         default: 'colletion'
-      }
-      ,
+      },
       {
         when: function (response) {
           return response.collectionname != '' && response.collection == 'y';
@@ -63,6 +61,11 @@ module.exports = class extends Generator {
         name: 'collectioncrud',
         message: 'Should I create CRUD methods for this collection? (y/n) ',
         default: 'y'
+      },
+      {
+        name: 'hasUsers',
+        message: 'Should I implement register and login functions? (y/n) ',
+        default: 'n'
       }
     ];
 
@@ -75,18 +78,12 @@ module.exports = class extends Generator {
       //this.json = props.json;
       this.collectionname = props.collectionname;
       this.collectioncrud = props.collectioncrud;
+      this.hasUsers = props.hasUsers;
     });
   }
 
  
   writing() {
-    this.fs.copyTpl(
-      this.templatePath('index.html'),
-      this.destinationPath('public/index.html'),
-      { title: this.dbName,
-        italic: this.dbHost,
-        title2: this.dbUser}
-    );
     this.fs.copyTpl(
       this.templatePath('_server.js'),
       this.destinationPath('public/server.js'),
@@ -97,7 +94,8 @@ module.exports = class extends Generator {
         dbPassword: this.dbPassword,
         //json: this.json
         collectionname: this.collectionname,
-        collectioncrud: this.collectioncrud
+        collectioncrud: this.collectioncrud,
+        hasUsers: this.hasUsers
       }
     );
   }
