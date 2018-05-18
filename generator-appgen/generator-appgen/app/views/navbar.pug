@@ -1,0 +1,26 @@
+nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
+  button.navbar-toggler.hidden-md-up.pull-xs-right(type='button', data-toggle='collapse', data-target='#navbar') &#x2630;
+  #navbar.navbar-nav.collapse.navbar-toggleable-sm
+    .container
+      a(class="navbar-brand" href="/")
+        img(src='https://i.imgur.com/N6viMyf.png' style='max-width:30px; display: inline-block;' class='img-fluid')
+        span(style="display: inline-block; margin:5px;") DigitalMe
+      .nav-items.clearfix
+        a.nav-item.nav-link(href='/about') About
+        a.nav-item.nav-link(href='/contact') Contact
+        a.nav-item.nav-link(href='/newsfeed') Newsfeed
+        a.nav-item.nav-link(href='/help') Help
+        div(class="container")
+          div(class="dropdown")
+            a.btn.btn-light.pull-md-right(style = "padding: 3px;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown")
+              img.avatar.img-circle.hidden-xs-down(style = "max-width:30px; max-height: 30px;" src="https://i.imgur.com/uYq21Ou.png")
+            ul(class="dropdown-menu")
+              a(class="dropdown-item" href='/posts/newpost') New Post
+              a(class="dropdown-item" href="/profile") My Profile
+              a(class="dropdown-item" href="/posts/myposts") My Posts 
+              div(class="dropdown-divider")
+              a(class="dropdown-item" href="/admin") Admin tools
+          if currentUser
+            a.nav-item.nav-link.btn.btn-logout.pull-md-right(href='/auth/logout') Logout
+          else 
+            a.nav-item.nav-link.btn.btn-login.pull-md-right(href='/auth/login') Login/Register
