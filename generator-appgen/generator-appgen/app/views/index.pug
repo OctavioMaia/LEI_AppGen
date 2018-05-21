@@ -1,16 +1,16 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    meta(http-equiv='x-ua-compatible', content='ie=edge')
-    title DigitalMe | #{title}
-    link(rel='stylesheet', href='../public/stylesheets/bootstrap.min.css', crossorigin='anonymous')
-    link(rel='stylesheet', href='../public/stylesheets/icon.css')
-    link(rel='stylesheet', href='../public/stylesheets/font-awesome.css')
-    link(rel='stylesheet', href='../public/stylesheets/full-slider.css')
-  body
-    include navbar
-    block content
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js', crossorigin='anonymous')
+extends layout
+
+block content
+  .main.container
+    .main.container.text-xs-center
+      br
+      h1 Welcome to 
+      h1= appName
+      br
+      br
+      br
+      h3= appName
+      h3 was promptly generated using Yeoman!
+      br
+      h6 Yeoman helps you to kickstart new projects, prescribing best practices and tools to help you stay productive.
+      h6 To do so, we provide a generator ecosystem. A generator is basically a plugin that can be run with the `yo` command to scaffold complete projects or useful parts.

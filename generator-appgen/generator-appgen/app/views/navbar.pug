@@ -9,6 +9,7 @@ nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
         a.nav-item.nav-link(href='/about') About
         a.nav-item.nav-link(href='/contact') Contact
         a.nav-item.nav-link(href='/help') Help
+        if hasUsers
           if currentUser
             a.nav-item.nav-link.btn.btn-logout.pull-md-right(href='/auth/logout') Logout
           else 

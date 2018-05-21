@@ -11,14 +11,17 @@ var session      = require('express-session');
 var pug          = require('pug');
 
 var config = {
+    "appName": "<%= appName %>",  
     "db": "<%= dbName %>",  
     "host": "<%= dbHost %>",  
     "user": "<%= dbUser %>",
     "pw": "<%= dbPassword %>",
     "port": "<%= dbPort %>",
     "hasUsers": "<%= hasUsers %>",
+    "localLogin": "<%= localLogin %>",
     "collectionname": "<%= collectionname %>",
-    "collectioncrud": "<%= collectioncrud %>"
+    "collectioncrud": "<%= collectioncrud %>",
+    "googleFacebookLogin": "<%= googleFacebookLogin %>"
 };
   
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
@@ -36,10 +39,14 @@ mongoose.connect(configDB, function (err, db) {
             resave: true,
             saveUninitialized: true
         }));
-
+        app.use(function (req, res, next) {
+            res.locals.appName = config.appName;
+            next();
+        });
         if(config.hasUsers=='y'){
             // atribute currentuser for login in PUG
             app.use(function (req, res, next) {
+                res.locals.hasUsers = true;
                 res.locals.currentUser = req.session.passport;
                 next();
             });
@@ -48,6 +55,34 @@ mongoose.connect(configDB, function (err, db) {
                     throw err;
                 else
                     console.log("Collection users has been created!");
+            });
+
+            if(config.googleFacebookLogin=='y'){
+                app.use(function (req, res, next) {
+                    res.locals.googleFacebookLogin = true;
+                    next();
+                });
+            }else{
+                app.use(function (req, res, next) {
+                    res.locals.googleFacebookLogin = false;
+                    next();
+                });
+            }
+            if(config.localLogin=='y'){
+                app.use(function (req, res, next) {
+                    res.locals.localLogin = true;
+                    next();
+                });
+            }else{
+                app.use(function (req, res, next) {
+                    res.locals.localLogin = false;
+                    next();
+                });
+            }
+        }else{
+            app.use(function (req, res, next) {
+                res.locals.hasUsers = false;
+                next();
             });
         }
         if(config.collectionname!=''){
@@ -59,8 +94,9 @@ mongoose.connect(configDB, function (err, db) {
             });
         }
         if(config.collectioncrud=='y'){ 
+            //TODO
         }
-
+    
         // express setup
         app.use(morgan('dev')); // dev logging
         app.use(cookieParser()); // cookies for auth
@@ -76,12 +112,14 @@ mongoose.connect(configDB, function (err, db) {
         app.set('views', path.join(__dirname, 'views'));
         app.set('view engine', 'pug');
 
-        var index = require('./app/index.js')
-        app.use('/',index)
-
         // routes ======================================================================
         passport = require('./config/passport')(passport) //passport for configuration
         
+        var index = require('./app/index.js')
+        var auth  = require('./app/auth.js')
+        app.use('/',index)
+        app.use('/auth',  auth)
+
         //error handling
         app.use(function(req, res, next) {
             var err = new Error('File Not Found');

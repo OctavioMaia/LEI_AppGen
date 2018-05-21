@@ -11,6 +11,10 @@ module.exports = class extends Generator {
 
     const prompts = [
       {
+        name: 'appName',
+        message: 'How should your application be called?'
+      },
+      {
         name: 'dbName',
         message: 'Database Name',
         default: 'appgen'
@@ -35,12 +39,7 @@ module.exports = class extends Generator {
         name: 'dbPort',
         message: 'Database Port',
         default: 27017
-      },/* ,
-      {
-        name: 'json',
-        message: 'JSON file you wish to import',
-        default: 'teaching.json'
-      } */
+      },
       {
         name: 'collection',
         message: 'Do you wish to create a collection? (y/n) ',
@@ -64,12 +63,29 @@ module.exports = class extends Generator {
       },
       {
         name: 'hasUsers',
-        message: 'Should I implement register and login functions? (y/n) ',
+        message: 'Do you wish to support users in your app? (y/n) ',
+        default: 'n'
+      },
+      {
+        when: function (response) {
+          return response.hasUsers == 'y';
+        },  
+        name: 'localLogin',
+        message: 'Should I implement local register and login functions? (y/n) ',
+        default: 'n'
+      },
+      {
+        when: function (response) {
+          return response.hasUsers == 'y';
+        },  
+        name: 'googleFacebookLogin',
+        message: 'Should I implement login functions via Google+ and Facebook? (y/n) ',
         default: 'n'
       }
     ];
 
    return this.prompt(prompts).then(props => {
+      this.appName = props.appName;
       this.dbName = props.dbName;
       this.dbHost = props.dbHost;
       this.dbUser = props.dbUser;
@@ -78,6 +94,9 @@ module.exports = class extends Generator {
       //this.json = props.json;
       this.collectionname = props.collectionname;
       this.collectioncrud = props.collectioncrud;
+      this.localLogin = props.localLogin;
+      this.googleFacebookLogin = props.googleFacebookLogin;
+      this.localLogin = props.localLogin;
       this.hasUsers = props.hasUsers;
     });
   }
@@ -87,7 +106,8 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('_server.js'),
       this.destinationPath('server.js'),
-      { dbName: this.dbName,
+      { appName: this.appName,
+        dbName: this.dbName,
         dbHost: this.dbHost,
         dbUser: this.dbUser,
         dbPort: this.dbPort,
@@ -95,7 +115,9 @@ module.exports = class extends Generator {
         //json: this.json
         collectionname: this.collectionname,
         collectioncrud: this.collectioncrud,
-        hasUsers: this.hasUsers
+        localLogin: this.localLogin,
+        googleFacebookLogin: this.googleFacebookLogin,
+        hasUsers : this.hasUsers
       }
     );
   }

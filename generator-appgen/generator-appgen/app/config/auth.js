@@ -18,6 +18,6 @@ module.exports = {
         'callbackURL'      : 'http://localhost:8080/auth/google/callback'
     },
 
-    'secretToken' : 'pri2017'
+    'secretToken' : 'lei-appgen'
 
 };
