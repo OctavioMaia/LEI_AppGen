@@ -16,9 +16,9 @@ var config = {
     "user": "",
     "pw": "",
     "port": "27017",
-    "hasUsers": "n",
-    "collectionname": "asvsdfsadsadsajfas",
-    "collectioncrud": "y"
+    "hasUsers": "y",
+    "collectionname": "abc",
+    "collectioncrud": "n"
 };
   
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
@@ -77,10 +77,12 @@ mongoose.connect(configDB, function (err, db) {
         app.set('view engine', 'pug');
 
         var index = require('./app/index.js')
+        var auth  = require('./app/auth.js')
         app.use('/',index)
+        app.use('/auth',  auth)
 
         // routes ======================================================================
-        passport = require('./config/passport')(passport); //passport for configuration
+        passport = require('./config/passport')(passport) //passport for configuration
         
         //error handling
         app.use(function(req, res, next) {

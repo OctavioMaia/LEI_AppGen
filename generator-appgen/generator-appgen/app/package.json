@@ -56,7 +56,7 @@
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest",
-    "start": "node ./public/server.js"
+    "start": "node server.js"
   },
   "lint-staged": {
     "*.js": [

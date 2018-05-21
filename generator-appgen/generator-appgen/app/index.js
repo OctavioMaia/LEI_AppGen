@@ -86,7 +86,7 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copyTpl(
       this.templatePath('_server.js'),
-      this.destinationPath('public/server.js'),
+      this.destinationPath('server.js'),
       { dbName: this.dbName,
         dbHost: this.dbHost,
         dbUser: this.dbUser,

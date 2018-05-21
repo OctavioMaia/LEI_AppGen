@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .main.container.text-xs-center
+    img(src='https://i.imgur.com/N6viMyf.png' style='display: inline-block;' class='img-fluid')
+    br
+    br
+    br
+    div(class='btn-group')
+      a(class='btn btn-primary disabled')
+        i(class='fa fa-facebook' style='width:16px; height:24px')
+      a(class='btn btn-primary' href='/auth/facebook' style='width:12em') Sign in with Facebook
+    br
+    br
+    div(class='btn-group')
+      a(class='btn btn-danger disabled')
+        i(class='fa fa-google-plus' style='width:16px; height:24px')
+      a(class='btn btn-danger' href='/auth/google' style='width:12em;') Sign in with Google+
+    br
+    br
+    div(class='btn-group')
+      a(class='btn btn-info  disabled')
+        i(class='fa fa-pencil-square' style='width:16px; height:24px')
+      a(class='btn btn-info ' href='/auth/locallogin' style='width:12em;') Sign in with credentials
+    br
+    br
+    h6 __________________________________________________________
+    br
+    div(class='btn-group')
+      a(class='btn btn-info  disabled')
+        i(class='fa fa-pencil-square' style='width:16px; height:24px')
+      a(class='btn btn-info ' href='/auth/register' style='width:12em;') Sign up with credentials
+  
