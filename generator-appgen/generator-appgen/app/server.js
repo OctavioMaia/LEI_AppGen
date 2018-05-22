@@ -21,7 +21,7 @@ var config = {
     "localLogin": "y",
     "collectionname": "1234",
     "collectioncrud": "n",
-    "googleFacebookLogin": "n"
+    "googleFacebookLogin": "y"
 };
   
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
