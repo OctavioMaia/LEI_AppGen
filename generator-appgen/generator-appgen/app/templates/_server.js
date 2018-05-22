@@ -21,12 +21,13 @@ var config = {
     "localLogin": "<%= localLogin %>",
     "collectionname": "<%= collectionname %>",
     "collectioncrud": "<%= collectioncrud %>",
+    "collectionschema": "<%= collectionschema %>",
     "googleFacebookLogin": "<%= googleFacebookLogin %>"
 };
   
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
 var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
-var configDB = "mongodb://" + login + config.host + dbport + "/" + config.db;   
+var configDB = "mongodb://" + login + config.host + dbport + "/" + config.db;
 
 // configuration ===============================================================
 mongoose.Promise = global.Promise
@@ -94,7 +95,7 @@ mongoose.connect(configDB, function (err, db) {
             });
         }
         if(config.collectioncrud=='y'){ 
-            //TODO
+            
         }
     
         // express setup

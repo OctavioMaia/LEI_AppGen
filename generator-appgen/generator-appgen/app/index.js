@@ -62,6 +62,13 @@ module.exports = class extends Generator {
         default: 'y'
       },
       {
+        when: function (response) {
+          return response.collectionname != '' && response.collection == 'y' && response.collectioncrud=='y';
+        },  
+        name: 'collectionschema',
+        message: 'Which Schema should I use for this collection? (ensure the scheme is inside the models folder) '
+      },
+      {
         name: 'hasUsers',
         message: 'Do you wish to support users in your app? (y/n) ',
         default: 'n'
@@ -94,6 +101,7 @@ module.exports = class extends Generator {
       //this.json = props.json;
       this.collectionname = props.collectionname;
       this.collectioncrud = props.collectioncrud;
+      this.collectionschema = props.collectionschema;
       this.localLogin = props.localLogin;
       this.googleFacebookLogin = props.googleFacebookLogin;
       this.localLogin = props.localLogin;
@@ -115,6 +123,7 @@ module.exports = class extends Generator {
         //json: this.json
         collectionname: this.collectionname,
         collectioncrud: this.collectioncrud,
+        collectionschema: this.collectionschema,
         localLogin: this.localLogin,
         googleFacebookLogin: this.googleFacebookLogin,
         hasUsers : this.hasUsers

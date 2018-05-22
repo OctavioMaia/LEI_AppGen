@@ -107,14 +107,14 @@ module.exports = function(passport) {
                                 //confirmation email
                                 var transport = nodemailer.createTransport(
                                     nodemailerSendgrid({
-                                        apiKey: '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'
+                                        apiKey: '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'
                                     })
                                 );
                                 var mailOptions = {
                                     to: email,
-                                    from: 'registration@digitalme.com',
-                                    subject: 'Welcome to DigitalMe!',
-                                    text: 'You are receiving this because you have registred at DigitalMe.\n\n' +
+                                    from: 'registration@appgen.com',
+                                    subject: 'Welcome!',
+                                    text: 'You are receiving this because you have registered an user account.\n\n' +
                                     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
                                     'http://' + req.headers.host + '/auth/confirm/' + newUser._id + '\n\n' +
                                     'If you did not request this, please ignore this email.\n'
