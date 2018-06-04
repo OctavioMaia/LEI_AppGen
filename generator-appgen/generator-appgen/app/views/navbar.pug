@@ -1,0 +1,16 @@
+nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
+  button.navbar-toggler.hidden-md-up.pull-xs-right(type='button', data-toggle='collapse', data-target='#navbar') &#x2630;
+  #navbar.navbar-nav.collapse.navbar-toggleable-sm
+    .container
+      a(class="navbar-brand" href="/")
+        img(src='' style='max-width:30px; display: inline-block;' class='img-fluid')
+        span(style="display: inline-block; margin:5px;") AppGen
+      .nav-items.clearfix
+        a.nav-item.nav-link(href='/about') About
+        a.nav-item.nav-link(href='/contact') Contact
+        a.nav-item.nav-link(href='/help') Help
+        if hasUsers
+          if currentUser
+            a.nav-item.nav-link.btn.btn-logout.pull-md-right(href='/auth/logout') Logout
+          else 
+            a.nav-item.nav-link.btn.btn-login.pull-md-right(href='/auth/login') Login/Register
