@@ -1,4 +1,5 @@
 var express      = require('express');
+var fs           = require("fs")
 var app          = express();
 var port         = 8080;
 var mongoose     = require('mongoose');
@@ -9,18 +10,20 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var pug          = require('pug');
+var peg          = require('pegjs');
+var pegutil      = require('pegjs-util')
 
 var config = {
-    "appName": "cenas",  
-    "db": "appgen",  
+    "appName": "testeeee",  
+    "db": "appgen2",  
     "host": "localhost",  
     "user": "",
     "pw": "",
     "port": "27017",
     "hasUsers": "y",
     "localLogin": "y",
-    "collectionname": "",
-    "collectioncrud": "",
+    "collectionname": "sdadasd",
+    "collectioncrud": "n",
     "collectionschema": "",
     "googleFacebookLogin": "y"
 };
@@ -28,6 +31,12 @@ var config = {
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
 var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
 var configDB = "mongodb://" + login + config.host + dbport + "/" + config.db;
+
+// PEG PARSER
+var parser = peg.generate(fs.readFileSync('parseJson.pegjs', "utf8"))
+var result = pegutil.parse(parser, fs.readFileSync('teste.txt', "utf8"))
+
+console.log(result.ast)
 
 // configuration ===============================================================
 mongoose.Promise = global.Promise
