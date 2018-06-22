@@ -22,10 +22,11 @@ List
 	= _ "[" _ (ListFields)+ "]"
     
 ListFields
-	= "{" field:Pal ":" ("'" / "[")? type:Pal ("'" / "]")? (Required)? "}" (",")? _ 
+	= "{" field:Pal ":" ("'")? type:Pal ("'")? (Required)? "}" (",")? _ 
     {
     if(field=="schema") 
     	{
+        
     	write = write + "var " + type+ "Schema = new Schema({\n";
         schema = type;
         }
@@ -49,9 +50,10 @@ Required
     }
 	
 Pal
-	= ([a-zA-Z0-9])+
+	= ([\[a-zA-Z0-9\]])+
     { return text(); }
     
+   
 _ "whitespace"
   = [ \t\n\r]*
               
