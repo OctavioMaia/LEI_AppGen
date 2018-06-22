@@ -1,6 +1,7 @@
 {
     var collection;
     var schema;
+    var req = '';
   	var write =  "var mongoose = require('mongoose'); \n" +
     "var Schema   = mongoose.Schema; \n\n";
     }
@@ -29,7 +30,8 @@ ListFields
         schema = type;
         }
     else if(field=="collection") {collection = type;}
-    else {write = write + field + ": {type: " + type + "},\n" }
+    else {write = write + field + ": {type: " + type + req + "},\n"
+    	  req = "";}
     //"}";
    	}
     
