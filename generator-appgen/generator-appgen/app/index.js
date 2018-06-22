@@ -1,6 +1,6 @@
 var Generator = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+var chalk     = require('chalk');
+var yosay     = require('yosay');
 
 module.exports = class extends Generator {
   prompting() {
@@ -41,29 +41,13 @@ module.exports = class extends Generator {
         default: 27017
       },
       {
-        name: 'collection',
-        message: 'Do you wish to create a collection? (y/n) ',
-        default: 'n'
-      },
-      {
-        when: function (response) {
-          return response.collection == 'y';
-        },  
-        name: 'collectionname',
-        message: 'How should this collection be named? ',
-        default: 'colletion'
-      },
-      {
-        when: function (response) {
-          return response.collectionname != '' && response.collection == 'y';
-        },  
         name: 'collectioncrud',
-        message: 'Should I create CRUD methods for this collection? (y/n) ',
+        message: 'Should I create CRUD methods? (y/n) ',
         default: 'y'
       },
       {
         when: function (response) {
-          return response.collectionname != '' && response.collection == 'y' && response.collectioncrud=='y';
+          return response.collectioncrud=='y';
         },  
         name: 'collectionschema',
         message: 'Which file(s) should I use to generate the schema? (ensure the file is located in the root folder) ',
@@ -99,8 +83,6 @@ module.exports = class extends Generator {
       this.dbUser = props.dbUser;
       this.dbPassword = props.dbPassword;
       this.dbPort = props.dbPort;
-      //this.json = props.json;
-      this.collectionname = props.collectionname;
       this.collectioncrud = props.collectioncrud;
       this.collectionschema = props.collectionschema;
       this.localLogin = props.localLogin;
@@ -121,8 +103,6 @@ module.exports = class extends Generator {
         dbUser: this.dbUser,
         dbPort: this.dbPort,
         dbPassword: this.dbPassword,
-        //json: this.json
-        collectionname: this.collectionname,
         collectioncrud: this.collectioncrud,
         collectionschema: this.collectionschema,
         localLogin: this.localLogin,

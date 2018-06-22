@@ -22,7 +22,6 @@ var config = {
     "port": "<%= dbPort %>",
     "hasUsers": "<%= hasUsers %>",
     "localLogin": "<%= localLogin %>",
-    "collectionname": "<%= collectionname %>",
     "collectioncrud": "<%= collectioncrud %>",
     "collectionschema": "<%= collectionschema %>",
     "googleFacebookLogin": "<%= googleFacebookLogin %>"
@@ -90,14 +89,6 @@ mongoose.connect(configDB, function (err, db) {
                 next();
             });
         }
-        if(config.collectionname!=''){
-            db.createCollection(config.collectionname, function(err, result) {
-            if (err) 
-                throw err;
-            else
-                console.log("Collection " + config.collectionname + " has been created!");
-            });
-        }
         if(config.collectioncrud=='y'){
             var res = config.collectionschema.split(',')
 
@@ -108,8 +99,9 @@ mongoose.connect(configDB, function (err, db) {
                 var file = './models/' + res[i].split('.')[0] + '.js'
 
                 fs.writeFile(file, result.ast, function (err) {
-                    if (err) throw err;
-                    console.log('Saved ' + file);
+                    if (err) 
+                        throw err;
+                    console.log('Created schema: ' + file);
                 });
             }           
         }
@@ -155,7 +147,6 @@ mongoose.connect(configDB, function (err, db) {
         // launch 
         app.listen(port);
         console.log('Server listening on port ' + port);
-
         module.exports = app;
     }else{
         console.log('Error connecting to DB!')

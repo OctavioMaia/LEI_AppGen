@@ -14,18 +14,17 @@ var pegutil      = require('pegjs-util');
 var fs           = require('fs');
 
 var config = {
-    "appName": "appgenerator2018",  
+    "appName": "",  
     "db": "appgen",  
     "host": "localhost",  
     "user": "",
     "pw": "",
     "port": "27017",
-    "hasUsers": "n",
-    "localLogin": "",
-    "collectionname": "testeabcd",
+    "hasUsers": "y",
+    "localLogin": "y",
     "collectioncrud": "y",
-    "collectionschema": "teste.txt",
-    "googleFacebookLogin": ""
+    "collectionschema": "teste2.txt",
+    "googleFacebookLogin": "n"
 };
 
   
@@ -90,14 +89,6 @@ mongoose.connect(configDB, function (err, db) {
                 next();
             });
         }
-        if(config.collectionname!=''){
-            db.createCollection(config.collectionname, function(err, result) {
-            if (err) 
-                throw err;
-            else
-                console.log("Collection " + config.collectionname + " has been created!");
-            });
-        }
         if(config.collectioncrud=='y'){
             var res = config.collectionschema.split(',')
 
@@ -108,8 +99,9 @@ mongoose.connect(configDB, function (err, db) {
                 var file = './models/' + res[i].split('.')[0] + '.js'
 
                 fs.writeFile(file, result.ast, function (err) {
-                    if (err) throw err;
-                    console.log('Saved ' + file);
+                    if (err) 
+                        throw err;
+                    console.log('Created schema: ' + file);
                 });
             }           
         }
