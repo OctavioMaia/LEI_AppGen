@@ -1,5 +1,4 @@
 var express      = require('express');
-var fs           = require("fs")
 var app          = express();
 var port         = 8080;
 var mongoose     = require('mongoose');
@@ -11,32 +10,28 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var pug          = require('pug');
 var peg          = require('pegjs');
-var pegutil      = require('pegjs-util')
+var pegutil      = require('pegjs-util');
+var fs           = require('fs');
 
 var config = {
-    "appName": "testeeee",  
-    "db": "appgen2",  
+    "appName": "appgenerator2018",  
+    "db": "appgen",  
     "host": "localhost",  
     "user": "",
     "pw": "",
     "port": "27017",
-    "hasUsers": "y",
-    "localLogin": "y",
-    "collectionname": "sdadasd",
-    "collectioncrud": "n",
-    "collectionschema": "",
-    "googleFacebookLogin": "y"
+    "hasUsers": "n",
+    "localLogin": "",
+    "collectionname": "testeabcd",
+    "collectioncrud": "y",
+    "collectionschema": "teste.txt",
+    "googleFacebookLogin": ""
 };
+
   
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
 var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
 var configDB = "mongodb://" + login + config.host + dbport + "/" + config.db;
-
-// PEG PARSER
-var parser = peg.generate(fs.readFileSync('parseJson.pegjs', "utf8"))
-var result = pegutil.parse(parser, fs.readFileSync('teste.txt', "utf8"))
-
-console.log(result.ast)
 
 // configuration ===============================================================
 mongoose.Promise = global.Promise
@@ -103,8 +98,20 @@ mongoose.connect(configDB, function (err, db) {
                 console.log("Collection " + config.collectionname + " has been created!");
             });
         }
-        if(config.collectioncrud=='y'){ 
-            
+        if(config.collectioncrud=='y'){
+            var res = config.collectionschema.split(',')
+
+            for(i=0; i<res.length;i++){
+                var parser = peg.generate(fs.readFileSync('parseJson.pegjs', "utf8"))
+                var result = pegutil.parse(parser, fs.readFileSync(res[i], "utf8"))
+
+                var file = './models/' + res[i].split('.')[0] + '.js'
+
+                fs.writeFile(file, result.ast, function (err) {
+                    if (err) throw err;
+                    console.log('Saved ' + file);
+                });
+            }           
         }
     
         // express setup

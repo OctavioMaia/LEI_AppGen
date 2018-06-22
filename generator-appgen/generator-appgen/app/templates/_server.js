@@ -9,6 +9,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var pug          = require('pug');
+var peg          = require('pegjs');
+var pegutil      = require('pegjs-util');
+var fs           = require('fs');
 
 var config = {
     "appName": "<%= appName %>",  
@@ -24,6 +27,7 @@ var config = {
     "collectionschema": "<%= collectionschema %>",
     "googleFacebookLogin": "<%= googleFacebookLogin %>"
 };
+
   
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
 var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
@@ -94,8 +98,20 @@ mongoose.connect(configDB, function (err, db) {
                 console.log("Collection " + config.collectionname + " has been created!");
             });
         }
-        if(config.collectioncrud=='y'){ 
-            
+        if(config.collectioncrud=='y'){
+            var res = config.collectionschema.split(',')
+
+            for(i=0; i<res.length;i++){
+                var parser = peg.generate(fs.readFileSync('parseJson.pegjs', "utf8"))
+                var result = pegutil.parse(parser, fs.readFileSync(res[i], "utf8"))
+
+                var file = './models/' + res[i].split('.')[0] + '.js'
+
+                fs.writeFile(file, result.ast, function (err) {
+                    if (err) throw err;
+                    console.log('Saved ' + file);
+                });
+            }           
         }
     
         // express setup

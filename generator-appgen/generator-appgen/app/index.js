@@ -66,7 +66,8 @@ module.exports = class extends Generator {
           return response.collectionname != '' && response.collection == 'y' && response.collectioncrud=='y';
         },  
         name: 'collectionschema',
-        message: 'Which Schema should I use for this collection? (ensure the scheme is inside the models folder) '
+        message: 'Which file(s) should I use to generate the schema? (ensure the file is located in the root folder) ',
+        default: 'example1,example2'
       },
       {
         name: 'hasUsers',
