@@ -1,0 +1,20 @@
+// o que a gramatica gera
+var schema = require('../app/models/ThoughtSchema');
+
+var express = require('express');
+var router = express.Router();
+router.get('/newThoughtSchema, function(req,res){
+	var reqs=[{'type':'text','text':'author'},
+		{'type':'text','text':'ident'},
+		{'type':'text','text':'location'},
+		{'type':'text','text':'privacy'},
+		{'type':'text','text':'title'},
+		{'type':'date','text':'date'},
+		{'type':'date','text':'pubdate'},
+		{'type':'text','text':'description'},
+		{'type':'text','text':'type'},
+		{'type':'text','text':'keywords'},
+		{'type':'text','text':'text'},
+		{'type':'text','text':'comments'}
+		];
+	res.render('processNewForm',reqs);
