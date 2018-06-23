@@ -1,4 +1,3 @@
-// o que a gramatica gera
 var schema = require('../app/models/ThoughtSchema');
 
 var express = require('express');
@@ -6,7 +5,7 @@ var router = express.Router();
 router.get('/newThoughtSchema, function(req,res){
 	var reqs=[{'type':'text','text':'author'},
 		{'type':'text','text':'ident'},
-		{'type':'text','text':'location'},
+		{'type':'file','text':'location'},
 		{'type':'text','text':'privacy'},
 		{'type':'text','text':'title'},
 		{'type':'date','text':'date'},
@@ -18,3 +17,49 @@ router.get('/newThoughtSchema, function(req,res){
 		{'type':'text','text':'comments'}
 		];
 	res.render('processNewForm',reqs);
+});
+
+router.post('/processNewForm', function(req, res, next) {
+	if (req.body.Type) {
+		 var form;
+		 var name;
+
+		 form = new schema();
+
+		if(form != undefined){
+			form.author = req.body.author;
+			form.ident = req.body.ident;
+			form.location = req.body.location;
+			form.privacy = req.body.privacy;
+			form.title = req.body.title;
+			form.date = req.body.date;
+			form.pubdate = req.body.pubdate;
+			form.description = req.body.description;
+			form.type = req.body.type;
+			form.keywords = req.body.keywords;
+			form.text = req.body.text;
+			form.comments = req.body.comments;
+			}
+		schema.collection(form, function(err,docs) {
+		if (err) {
+			var message = form.type + 'has failed to create form!'
+			res.render('error', {
+				'Title': 'Error', 
+				 message
+			});
+		} else {
+			var message = form.type + 'has been created with success!'
+			var href ='/insertmenu'
+			res.render('success',{
+				'Title': 'Success!',
+				message,
+				href
+			});
+		}
+		});
+	}else{
+		var err = new Error('Unknown Type' + req.body.Type);
+		err.status = 404;
+		next(err);
+	}
+});
