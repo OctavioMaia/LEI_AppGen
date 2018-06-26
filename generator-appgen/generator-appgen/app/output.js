@@ -2,7 +2,8 @@ var schema = require('../app/models/ThoughtSchema');
 
 var express = require('express');
 var router = express.Router();
-router.get('/newThoughtSchema, function(req,res){
+
+router.get('/newThoughtSchema', function(req,res){
 	var reqs=[{'type':'text','text':'author'},
 		{'type':'text','text':'ident'},
 		{'type':'file','text':'location'},
@@ -16,7 +17,7 @@ router.get('/newThoughtSchema, function(req,res){
 		{'type':'text','text':'text'},
 		{'type':'text','text':'comments'}
 		];
-	res.render('processNewForm',reqs);
+	res.render('processNewForm',{title: 'Form',reqs});
 });
 
 router.post('/processNewForm', function(req, res, next) {
@@ -29,7 +30,7 @@ router.post('/processNewForm', function(req, res, next) {
 		if(form != undefined){
 			form.author = req.body.author;
 			form.ident = req.body.ident;
-			form.location = req.body.location;
+			//form.location = req.body.location;  // !! pede para meter ficheiro em vez de escrever texto
 			form.privacy = req.body.privacy;
 			form.title = req.body.title;
 			form.date = req.body.date;
@@ -40,7 +41,7 @@ router.post('/processNewForm', function(req, res, next) {
 			form.text = req.body.text;
 			form.comments = req.body.comments;
 			}
-		schema.collection(form, function(err,docs) {
+		schema.collection.insert(form, function(err,docs) { // !! falta o .insert
 		if (err) {
 			var message = form.type + 'has failed to create form!'
 			res.render('error', {
@@ -63,3 +64,5 @@ router.post('/processNewForm', function(req, res, next) {
 		next(err);
 	}
 });
+
+module.exports = router;

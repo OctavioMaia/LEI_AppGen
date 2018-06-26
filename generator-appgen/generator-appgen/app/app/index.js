@@ -21,6 +21,20 @@ router.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
+// List ==============================
+/*router.get('/about', function(req, res) {
+    res.render('about', {
+        title: 'About'
+    });
+});*/
+
+// Insert ==============================
+router.get('/insertmenu', function(req, res) {
+    res.render('insertmenu', {
+        title: 'Insert'
+    });
+});
+
 // ABOUT ==============================
 router.get('/about', function(req, res) {
     res.render('about', {

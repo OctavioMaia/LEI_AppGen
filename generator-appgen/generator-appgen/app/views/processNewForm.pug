@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1 Submission Form
+        form(method='POST' action='/forms/processNewForm')
+          each val in reqs
+              if (val.text!='Type')
+                  div.form-group
+                      label(for=val.text) #{val.text}:
+                      if (!val.obligatory)
+                        input#name.form-control(type=val.type, name=val.text)
+                      else
+                        input#name.form-control(type=val.type, name=val.text required)
+              else
+                div.form-group
+                  label(for=val.text) #{val.text}:
+                  if (!val.obligatory)
+                    input#name.form-control(type=val.type, name=val.text value=name readonly)
+                  else
+                    input#name.form-control(type=val.type, name=val.text value=name readonly required)
+          button.btn.btn-primary.btn-block(type='submit' ) Confirm

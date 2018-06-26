@@ -13,6 +13,8 @@ var peg          = require('pegjs');
 var pegutil      = require('pegjs-util');
 var fs           = require('fs');
 
+
+
 var config = {
     "appName": "",  
     "db": "appgen",  
@@ -23,14 +25,15 @@ var config = {
     "hasUsers": "y",
     "localLogin": "y",
     "collectioncrud": "y",
-    "collectionschema": "teste2.txt",
+    "collectionschema": "teste.txt",
     "googleFacebookLogin": "n"
 };
 
   
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
 var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
-var configDB = "mongodb://" + login + config.host + dbport + "/" + config.db;
+//var configDB = "mongodb://" + login + config.host + dbport + "/" + config.db;
+var configDB = "mongodb://admin:admin1@ds229388.mlab.com:29388/appgendb"
 
 // configuration ===============================================================
 mongoose.Promise = global.Promise
@@ -126,8 +129,10 @@ mongoose.connect(configDB, function (err, db) {
         
         var index = require('./app/index.js')
         var auth  = require('./app/auth.js')
+        var forms   = require('./output.js')
         app.use('/',index)
         app.use('/auth',  auth)
+        app.use('/forms',  forms)
 
         //error handling
         app.use(function(req, res, next) {
