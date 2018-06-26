@@ -47,7 +47,7 @@ ListFields
     	{
         write = write + "var schema = require('../app/models/" + type + "Schema');\n\n"
         write = write + "var express = require('express');\nvar router = express.Router();\n"
-        write = write + "router.get('/new" + type + "Schema, function(req,res){\n\tvar reqs=["
+        write = write + "router.get('/new" + type + "Schema', function(req,res){\n\tvar reqs=["
         //}
         }
     else if(field=="collection") {collection = type;}
