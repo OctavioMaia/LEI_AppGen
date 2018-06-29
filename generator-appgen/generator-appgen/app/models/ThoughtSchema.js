@@ -2,18 +2,14 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema; 
 
 var ThoughtSchema = new Schema({
-	author: {type: String},
-	ident: {type: String},
-	location: {type: String},
-	privacy: {type: String},
-	title: {type: String},
-	date: {type: Date},
-	pubdate: {type: Date},
-	description: {type: String},
-	type: {type: String},
-	keywords: {type: String},
-	text: {type: String},
-	comments: {type: [String]},
+	Author: {type: String},
+	Identification: {type: String},
+	Location: {type: String},
+	Title: {type: String},
+	Date: {type: Date},
+	Description: {type: String},
+	Keywords: {type: String},
+	Text: {type: String},
 })
 
  module.exports = mongoose.model('Thought', ThoughtSchema, 'posts');

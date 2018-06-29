@@ -15,17 +15,17 @@ var fs           = require('fs');
 var async        = require("async");
 
 var config = {
-    "appName": "abcdefghi",  
+    "appName": "Gerador de aplicações",  
     "db": "appgen",  
     "host": "localhost",  
     "user": "",
     "pw": "",
     "port": "27017",
-    "hasUsers": "n",
-    "localLogin": "",
+    "hasUsers": "y",
+    "localLogin": "y",
     "collectioncrud": "y",
     "collectionschema": "thought.txt",
-    "googleFacebookLogin": ""
+    "googleFacebookLogin": "y"
 };
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
@@ -159,10 +159,12 @@ mongoose.connect(configDB, function (err, db) {
         passport = require('./config/passport')(passport) //passport for configuration
         var index = require('./app/index.js')
         var auth  = require('./app/auth.js')
+        var profile = require('./app/profile.js');
         var forms  = require('./app/thoughtRouter.js') //ISTO NAO PODE ESTAR AQUI, TEM DE SER DINAMICO
 
         app.use('/',index)
         app.use('/auth', auth)
+        app.use('/profile',  profile);
         app.use('/forms', forms) // E ISTO TAMBEM TEM DE SER DINAMICO
 
         //error handling

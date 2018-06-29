@@ -159,10 +159,12 @@ mongoose.connect(configDB, function (err, db) {
         passport = require('./config/passport')(passport) //passport for configuration
         var index = require('./app/index.js')
         var auth  = require('./app/auth.js')
+        var profile = require('./app/profile.js');
         var forms  = require('./app/thoughtRouter.js') //ISTO NAO PODE ESTAR AQUI, TEM DE SER DINAMICO
 
         app.use('/',index)
         app.use('/auth', auth)
+        app.use('/profile',  profile);
         app.use('/forms', forms) // E ISTO TAMBEM TEM DE SER DINAMICO
 
         //error handling
