@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Edit your profile
+        // register form
+        form(method='POST' action='/profile/editprofile')
+          div.form-group
+            label(for='name') Name:
+            input#name.form-control(type='text', name='name' value=user.name required)
+          if type=='local'
+            div.form-group
+              label(for='password') Password:
+              input#name.form-control(type='password', name='password' value='' minlength=6)
+            div.form-group
+              label(for='confirmPassword') Confirm Password:
+              input#name.form-control(type='password', name='confirmPassword' value='' minlength=6)
+          div.form-group
+            label(for='age') Age:
+            input#name.form-control(type='number',  name='age' value=user.age min="16" required)
+          div.form-group
+            label(for='gender') Gender:
+            select(type="text", class="form-control" name="gender" required)
+              option(value="") Please select a gender
+              option(value="Male") Male
+              option(value="Female") Female
+          div.form-group
+            label(for='address') Address:
+            input#name.form-control(type='text',  name='address' value=user.address)
+          div.form-group
+            label(for='profession') Profession:
+            input#name.form-control(type='text',  name='profession' value=user.profession)
+          div.form-group
+            label(for='cnumber') Cellphone Number:
+            input#name.form-control(type='number', name='cnumber' value=user.cnumber)
+          div.form-group
+            label(for='type') Secret Token:
+            input#name.form-control(type='text', name='type')
+          div.form-group
+            label(for='type') About me:
+            br
+            textarea(style="background-color: white;color:black;" rows="4" cols="65" name="aboutme")
+          button.btn.btn-primary(type='submit' class='btn-block btn-primary') Confirm changes
+        form(method='GET' action='/profile')
+          button.btn.btn-secondary(type='submit' class='btn-block btn-danger') Discard changes

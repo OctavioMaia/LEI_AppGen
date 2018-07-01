@@ -17,10 +17,7 @@ router.get('/newThoughtSchema', function(req,res){
 });
 
 router.post('/processNewForm', function(req, res, next) {
-	console.log('ENTREI')
-	console.log(req.body)
 	if (req.body) {
-		console.log('ENTREI TYPE')
 		var form;
 		var name;
 

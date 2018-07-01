@@ -12,10 +12,11 @@ var pug          = require('pug');
 var peg          = require('pegjs');
 var pegutil      = require('pegjs-util');
 var fs           = require('fs');
+var configDB     = require('./config/database.js');
 var async        = require("async");
 
 var config = {
-    "appName": "Gerador de aplicações",  
+    "appName": "testeadasd",  
     "db": "appgen",  
     "host": "localhost",  
     "user": "",
@@ -30,11 +31,19 @@ var config = {
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
 var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
-var configDB = "mongodb://" + login + config.host + dbport + "/" + config.db;
+var newDBConfig = "mongodb://" + login + config.host + dbport + "/" + config.db;
+
+var str = "module.exports = { 'url' : '" + newDBConfig + "'};"
+
+fs.writeFileSync('./config/database.js', str, function (err) {
+    if (err) 
+        throw err;
+    console.log('Updated Database config');
+});
 
 // configuration ===============================================================
 mongoose.Promise = global.Promise
-mongoose.connect(configDB, function (err, db) {
+mongoose.connect(configDB.url, function (err, db) {
     if(!err){
         console.log("Connected to database!")  
         // required for passport
@@ -160,11 +169,13 @@ mongoose.connect(configDB, function (err, db) {
         var index = require('./app/index.js')
         var auth  = require('./app/auth.js')
         var profile = require('./app/profile.js');
+        var list = require('./app/list.js');
         var forms  = require('./app/thoughtRouter.js') //ISTO NAO PODE ESTAR AQUI, TEM DE SER DINAMICO
 
         app.use('/',index)
         app.use('/auth', auth)
-        app.use('/profile',  profile);
+        app.use('/profile', profile);
+        app.use('/list', list)
         app.use('/forms', forms) // E ISTO TAMBEM TEM DE SER DINAMICO
 
         //error handling

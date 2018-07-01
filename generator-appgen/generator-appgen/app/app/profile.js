@@ -39,7 +39,7 @@ router.get('/', isLoggedIn,function(req, res, next) {
 
     avatar = ''
     if (fs.existsSync('./public/uploads/' + id + '.jpg')) {
-        avatar = '../uploads/' + id + '.jpg'
+        avatar = '../public/uploads/' + id + '.jpg'
     }
 
     res.render('profile', {
@@ -47,39 +47,6 @@ router.get('/', isLoggedIn,function(req, res, next) {
         user,
         avatar
     }); 
-});
-
-// PUBLIC PROFILE SECTION =========================
-router.get('/public/:id',function(req, res, next) {
-    User.findOne({'_id': req.params.id}, function(err, result) {
-        if(!err && result!=null){
-            if (result.google.id != undefined){
-                user = result.google;
-            }else if (result.facebook.id != undefined){
-                user = result.facebook;
-            }else{
-                user = result.local;
-            }
-
-            avatar = ''
-
-            if (fs.existsSync('./public/uploads/' + req.params.id + '.jpg')){
-                avatar = '../../uploads/'+ req.params.id + '.jpg'
-            }else{
-                avatar = 'https://i.imgur.com/uYq21Ou.png'
-            }
-            
-            res.render('publicprofile', {
-                title: 'Profile',
-                user,
-                avatar
-            }); 
-        }else{
-            var err = new Error('Profile not found.');
-            err.status = 400;
-            return next(err);
-        }
-    });
 });
 
 // EDITPROFILE ==============================
