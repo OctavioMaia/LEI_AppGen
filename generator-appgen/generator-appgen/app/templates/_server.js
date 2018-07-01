@@ -12,6 +12,7 @@ var pug          = require('pug');
 var peg          = require('pegjs');
 var pegutil      = require('pegjs-util');
 var fs           = require('fs');
+var async        = require("async");
 
 var config = {
     "appName": "<%= appName %>",  
@@ -27,7 +28,6 @@ var config = {
     "googleFacebookLogin": "<%= googleFacebookLogin %>"
 };
 
-  
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
 var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
 var configDB = "mongodb://" + login + config.host + dbport + "/" + config.db;
@@ -91,19 +91,53 @@ mongoose.connect(configDB, function (err, db) {
         }
         if(config.collectioncrud=='y'){
             var res = config.collectionschema.split(',')
+            async.each(res, function(item, callback) {
+                console.log('Processing file ' + item);
+                //SCHEMA
+                var parserSchema = peg.generate(fs.readFileSync('./parsers/parseSchema.pegjs', "utf8"))
+                var resultSchema = pegutil.parse(parserSchema, fs.readFileSync(item, "utf8"))
+                var fileSchema = './models/' + item.split('.')[0] + 'Schema.js'
 
-            for(i=0; i<res.length;i++){
-                var parser = peg.generate(fs.readFileSync('parseJson.pegjs', "utf8"))
-                var result = pegutil.parse(parser, fs.readFileSync(res[i], "utf8"))
-
-                var file = './models/' + res[i].split('.')[0] + '.js'
-
-                fs.writeFile(file, result.ast, function (err) {
+                fs.writeFileSync(fileSchema, resultSchema.ast, function (err) {
                     if (err) 
                         throw err;
-                    console.log('Created schema: ' + file);
+                    console.log('Created schema: ' + fileSchema);
                 });
-            }           
+                //ROUTER
+                var parserRouter = peg.generate(fs.readFileSync('./parsers/parseRouter.pegjs', "utf8"))
+                var resultRouter = pegutil.parse(parserRouter, fs.readFileSync(item, "utf8"))
+                var fileRouter = './app/' + item.split('.')[0] + 'Router.js'
+
+                fs.writeFileSync(fileRouter, resultRouter.ast, function (err) {
+                    if (err) 
+                        throw err;
+                    console.log('Created router: ' + fileRouter);
+                });
+                //OPERATIONS
+                /*
+                var parserOps = peg.generate(fs.readFileSync('./parsers/parseOps.pegjs', "utf8"))
+                var resultOps = pegutil.parse(parserOps, fs.readFileSync(item, "utf8"))
+                var fileOps = './app/' + item.split('.')[0] + '2.js'
+
+                fs.writeFile(fileOps, resultOps.ast, function (err) {
+                    if (err) 
+                        throw err;
+                    console.log('Created ops: ' + fileOps);
+                });
+                */
+
+                console.log('File processed');
+                callback();
+            }, function(err) {
+                // if any of the file processing produced an error, err would equal that error
+                if( err ) {
+                  // One of the iterations produced an error.
+                  // All processing will now stop.
+                  console.log('A file failed to process');
+                } else {
+                  console.log('All files have been processed successfully');
+                }
+            });
         }
     
         // express setup
@@ -114,7 +148,7 @@ mongoose.connect(configDB, function (err, db) {
         app.use(express.static(__dirname));
         app.use(passport.initialize());
         app.use(passport.session()); // persistent login sessions
-
+        
         // view engine setup
         //console.log(path.join(__dirname, 'views'))
         app.engine('pug', require('pug').__express)
@@ -123,11 +157,15 @@ mongoose.connect(configDB, function (err, db) {
 
         // routes ======================================================================
         passport = require('./config/passport')(passport) //passport for configuration
-        
         var index = require('./app/index.js')
         var auth  = require('./app/auth.js')
+        var profile = require('./app/profile.js');
+        var forms  = require('./app/thoughtRouter.js') //ISTO NAO PODE ESTAR AQUI, TEM DE SER DINAMICO
+
         app.use('/',index)
-        app.use('/auth',  auth)
+        app.use('/auth', auth)
+        app.use('/profile',  profile);
+        app.use('/forms', forms) // E ISTO TAMBEM TEM DE SER DINAMICO
 
         //error handling
         app.use(function(req, res, next) {

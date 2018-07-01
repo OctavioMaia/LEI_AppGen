@@ -31,14 +31,17 @@
     "yeoman-test": "^1.7.0"
   },
   "dependencies": {
+    "async": "^2.6.1",
     "bcrypt-nodejs": "0.0.3",
     "chalk": "^2.1.0",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
     "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
     "express-session": "^1.15.6",
     "mongoose": "^5.0.10",
     "morgan": "^1.9.0",
+    "node-async-loop": "^1.2.2",
     "nodemailer": "^4.6.4",
     "nodemailer-sendgrid": "^1.0.3",
     "passport": "^0.4.0",
@@ -48,6 +51,7 @@
     "passport-local": "^1.0.0",
     "pegjs": "^0.10.0",
     "pegjs-util": "^1.4.12",
+    "wait-loop": "^1.0.0",
     "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
