@@ -3,6 +3,7 @@
     var schema;
   	var write = "";
     var comma = "";
+    var result=[];
     var fields = [];
     var i = 0;
     }
@@ -10,12 +11,15 @@ Col
 	= "{" _ ColOp+ _ "}" _
     {
 
-    return write ;
+    return result ;
 	}
     
 ColOp
 	= (_ "entity:") List
-    
+    {
+    result.push([schema,write]);
+    write = "";
+    }
     
 List
 	= _ "[" _ (ListFields)+ "]"
@@ -23,7 +27,7 @@ List
     //{
     write = write + "];\n\tres.render('processNewForm',{title: 'Form',reqs});\n});\n\n"
    			+ "router.post('/processNewForm', function(req, res, next) {\n\t"
-            + "if (req.body) {\n\t\tvar form;\n\t\tvar name;\n\n\t\t"
+            + "console.log('ENTREI')\n\tconsole.log(req.body)\n\tif (req.body) {\n\t\tconsole.log('ENTREI TYPE')\n\t\tvar form;\n\t\tvar name;\n\n\t\t"
             + "form = new schema();\n\n\t\tif(form != undefined){\n\t\t\t"
             for(var j =0; j<i; j++){
                   write = write + "form." + fields[j] + " = req.body." + fields[j] + ";\n\t\t\t"
@@ -45,6 +49,7 @@ ListFields
     {
     if(field=="schema") 
     	{
+        schema = type
         write = write + "var schema = require('./../models/" + type + "Schema');\n\n"
         write = write + "var express = require('express');\nvar router = express.Router();\n\n"
         write = write + "router.get('/new" + type + "Schema', function(req,res){\n\tvar reqs=["

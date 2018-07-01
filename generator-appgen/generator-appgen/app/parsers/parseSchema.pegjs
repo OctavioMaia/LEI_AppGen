@@ -1,21 +1,26 @@
 {
     var collection;
     var schema;
+    var result=[];
     var req = '';
-  	var write =  "var mongoose = require('mongoose'); \n" +
-    "var Schema   = mongoose.Schema; \n\n";
+  	var write =  "";
     }
 Col
 	= "{" _ ColOp+ _ "}" _
     {
-    //{
-    write = write + "})\n\n module.exports = mongoose.model('"
-    + schema + "', " + schema + "Schema, '" + collection + "');";
-    return write ;
+
+    return result ;
 	}
     
 ColOp
 	= (_ "entity:" / _ "insert:") List
+    {
+    //{
+    write = write + "})\n\n module.exports = mongoose.model('"
+    + schema + "', " + schema + "Schema, '" + collection + "');\n\n";
+    result.push([schema,write]);
+    write = "";
+    }
     
     
 List
@@ -26,7 +31,8 @@ ListFields
     {
     if(field=="schema") 
     	{
-        
+        write = write + "var mongoose = require('mongoose'); \n" +
+    "var Schema   = mongoose.Schema; \n\n";
     	write = write + "var " + type+ "Schema = new Schema({\n";
         schema = type;
         }

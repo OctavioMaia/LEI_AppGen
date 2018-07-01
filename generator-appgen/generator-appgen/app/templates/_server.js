@@ -105,19 +105,36 @@ mongoose.connect(configDB.url, function (err, db) {
                 //SCHEMA
                 var parserSchema = peg.generate(fs.readFileSync('./parsers/parseSchema.pegjs', "utf8"))
                 var resultSchema = pegutil.parse(parserSchema, fs.readFileSync(item, "utf8"))
-                var fileSchema = './models/' + item.split('.')[0] + 'Schema.js'
-
-                fs.writeFileSync(fileSchema, resultSchema.ast, function (err) {
-                    if (err) 
-                        throw err;
-                    console.log('Created schema: ' + fileSchema);
-                });
+                var resSchemas = resultSchema.ast
+                
+                
+                for (var i = 0; i < resSchemas.length; i++) {
+                    fs.writeFileSync('./models/' +resSchemas[i][0]+ 'Schema.js', resSchemas[i][1], function (err) {
+                        if (err) 
+                            throw err;
+                        console.log('Created schema: ' + resSchemas[i][0]);
+                    });
+                }
+                
                 //ROUTER
                 var parserRouter = peg.generate(fs.readFileSync('./parsers/parseRouter.pegjs', "utf8"))
                 var resultRouter = pegutil.parse(parserRouter, fs.readFileSync(item, "utf8"))
-                var fileRouter = './app/' + item.split('.')[0] + 'Router.js'
-
-                fs.writeFileSync(fileRouter, resultRouter.ast, function (err) {
+                var resRouter = resultRouter.ast
+                
+                
+                for (var i = 0; i < resRouter.length; i++) {
+                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], function (err) {
+                        if (err) 
+                            throw err;
+                        console.log('Created router: ' + resRouter[i][0]);
+                    });
+                }
+                
+                //REQUIRES
+                var parserReqs = peg.generate(fs.readFileSync('./parsers/parseReqs.pegjs', "utf8"))
+                var resultReqs = pegutil.parse(parserReqs, fs.readFileSync(item, "utf8"))
+                var fileReqs = './app/requires.js'
+                fs.writeFileSync(fileReqs, resultReqs.ast, function (err) {
                     if (err) 
                         throw err;
                     console.log('Created router: ' + fileRouter);
