@@ -25,8 +25,8 @@ List
 	= _ "[" _ (ListFields)+ "]"
     {
     //{
-    write = write + "];\n\tres.render('processNewForm',{title: 'Form',reqs});\n});\n\n"
-   			+ "router.post('/processNewForm', function(req, res, next) {\n\t"
+    write = write + "];\n\tres.render('processNewForm',{title: 'Form',reqs,href:'/insertmenu/"+schema+"Form/processNew"+schema+"'});\n});\n\n"
+   			+ "router.post('/processNew"+schema+"', function(req, res, next) {\n\t"
             + "console.log('ENTREI')\n\tconsole.log(req.body)\n\tif (req.body) {\n\t\tconsole.log('ENTREI TYPE')\n\t\tvar form;\n\t\tvar name;\n\n\t\t"
             + "form = new schema();\n\n\t\tif(form != undefined){\n\t\t\t"
             for(var j =0; j<i; j++){

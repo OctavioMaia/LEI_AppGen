@@ -13,10 +13,10 @@ router.get('/newThoughtSchema', function(req,res){
 		{'type':'text','text':'Keywords'},
 		{'type':'text','text':'Text'}
 		];
-	res.render('processNewForm',{title: 'Form',reqs});
+	res.render('processNewForm',{title: 'Form',reqs,href:'/insertmenu/ThoughtForm/processNewThought'});
 });
 
-router.post('/processNewForm', function(req, res, next) {
+router.post('/processNewThought', function(req, res, next) {
 	console.log('ENTREI')
 	console.log(req.body)
 	if (req.body) {
