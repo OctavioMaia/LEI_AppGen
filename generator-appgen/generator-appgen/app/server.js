@@ -16,7 +16,7 @@ var configDB     = require('./config/database.js');
 var async        = require("async");
 
 var config = {
-    "appName": "appgen",  
+    "appName": "",  
     "db": "appgen",  
     "host": "localhost",  
     "user": "",
@@ -110,7 +110,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 
                 for (var i = 0; i < resSchemas.length; i++) {
-                    fs.writeFileSync('./models/' +resSchemas[i][0]+ 'Schema.js', resSchemas[i][1], {encoding: 'utf-8'}, function (err) {
+                    fs.writeFileSync('./models/' +resSchemas[i][0]+ 'Schema.js', resSchemas[i][1],{encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created schema: ' + resSchemas[i][0]);
@@ -136,7 +136,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 var parserReqs = peg.generate(fs.readFileSync('./parsers/parseReqs.pegjs', "utf8"))
                 var resultReqs = pegutil.parse(parserReqs, fs.readFileSync(item, "utf8"))
                 var fileReqs = './app/requires.js'
-                fs.writeFileSync(fileReqs, resultReqs.ast, {encoding: 'utf-8'}, function (err) {
+                fs.writeFileSync(fileReqs, resultReqs.ast,{encoding: 'utf-8'}, function (err) {
                     if (err) 
                         throw err;
                     console.log('Created router: ' + fileRouter);
@@ -147,7 +147,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 var resultOps = pegutil.parse(parserOps, fs.readFileSync(item, "utf8"))
                 var fileOps = './app/' + item.split('.')[0] + '2.js'
 
-                fs.writeFile(fileOps, resultOps.ast, function (err) {
+                fs.writeFile(fileOps, resultOps.ast, {encoding: 'utf-8'},function (err) {
                     if (err) 
                         throw err;
                     console.log('Created ops: ' + fileOps);
@@ -165,7 +165,7 @@ mongoose.connect(configDB.url, function (err, db) {
                     menu = menu + "\t\tdiv(class='btn-group')\n"+ 
                                   "\t\t\ta(class='btn btn-light  disabled')\n" +
                                   "\t\t\t\ti(class='fa fa-book' style='width:16px; height:24px')\n" +
-                                  "\t\t\ta(class='btn btn-light ' href='/forms/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
+                                  "\t\t\ta(class='btn btn-light ' href='/insertmenu/"+inputs[i]+"Form/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
                                   "\t\tbr\n";
                     
                 }
@@ -210,13 +210,13 @@ mongoose.connect(configDB.url, function (err, db) {
         var auth  = require('./app/auth.js')
         var profile = require('./app/profile.js');
         var list = require('./app/list.js');
-        var forms  = require('./app/thoughtRouter.js') //ISTO NAO PODE ESTAR AQUI, TEM DE SER DINAMICO
+        var forms  = require('./app/requires.js'); 
 
         app.use('/',index)
         app.use('/auth', auth)
         app.use('/profile', profile);
         app.use('/list', list)
-        app.use('/forms', forms) // E ISTO TAMBEM TEM DE SER DINAMICO
+        app.use('/insertmenu', forms);
 
         //error handling
         app.use(function(req, res, next) {

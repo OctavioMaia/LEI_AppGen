@@ -73,6 +73,19 @@ module.exports = class extends Generator {
         name: 'googleFacebookLogin',
         message: 'Should I implement login functions via Google+ and Facebook? (y/n) ',
         default: 'n'
+      },
+      {
+        name: 'faq',
+        message: 'Do you wish to have a faq section in your app? (y/n) ',
+        default: 'n'
+      },
+      {
+        when: function (response) {
+          return response.faq=='y';
+        },  
+        name: 'faqPug',
+        message: 'Which file(s) should I use to generate the faq section? (ensure the file is located in the root folder) ',
+        default: 'example1,example2'
       }
     ];
 
@@ -89,6 +102,8 @@ module.exports = class extends Generator {
       this.googleFacebookLogin = props.googleFacebookLogin;
       this.localLogin = props.localLogin;
       this.hasUsers = props.hasUsers;
+      this.faq = props.faq;
+      this.faqPug = props.faqPug;
     });
   }
 
@@ -107,7 +122,9 @@ module.exports = class extends Generator {
         collectionschema: this.collectionschema,
         localLogin: this.localLogin,
         googleFacebookLogin: this.googleFacebookLogin,
-        hasUsers : this.hasUsers
+        hasUsers : this.hasUsers,
+        faq : this.faq,
+        faqPug : this.faqPug
       }
     );
   }

@@ -1,11 +1,14 @@
 {
-    var requires = "";
+    var result = "";
+    var requires = "var express      = require('express');\n"+
+                    "var router              = express.Router();\n"
+    var uses = "";
     }
 Col
 	= "{" _ ColOp+ _ "}" _
     {
- 
-    return requires ;
+ 	result= "\n" + requires +"\n" + uses + "\nmodule.exports = router;\n";
+    return result ;
 	}
     
 ColOp
@@ -21,8 +24,8 @@ ListFields
     if(field=="schema") 
     	{
 
-        requires = requires + "var " + type +"Form = require('./app/"+ type +"Router');\n";
-
+        requires = requires + "var " + type +"Form = require('./"+ type +"Router');\n";
+		uses = uses + "router.use('/"+type+"Form', "+type+"Form);\n"
         }
 
    	}

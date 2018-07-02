@@ -19,28 +19,21 @@ block content
       .card
         .card-header
           h4.card-header
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseOne') Is account registration required?
-        #collapseOne.panel-collapse.collapse.in
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse1') QUESTAO
+        #collapse1.panel-collapse.collapse
+          .card-block
+            | RESPOSTA
+      .card
+        .card-header
+          h4.card-header
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse2') Is account registration required?
+        #collapse2.panel-collapse.collapse
           .card-block
             | Account registration at DigitalMe is only required if you're planning on creating posts.
-            br
-            | Otherwise you can access most of the website as a guest.
       .card
         .card-header
           h4.card-header
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo') Why can't I login? I have already registered
-        #collapseTwo.panel-collapse.collapse
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse3') Can I submit my own posts?
+        #collapse3.panel-collapse.collapse
           .card-block
-            | If you've registered via Facebook or Google+ the login should be instant.
-            br 
-            | In case you've done a local sign-up be sure to check your email for the action email. Check in the spam folder to be certain.
-      .card
-        .card-header
-          h4.card-header
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTen') Can I submit my own posts?
-        #collapseTen.panel-collapse.collapse
-          .card-block
-            | Yes! That is the sole purpose of DigitalMe.
-            br 
-            | Just create an account, or login to your existing one and submit a new post.
-      
+            | Yes!

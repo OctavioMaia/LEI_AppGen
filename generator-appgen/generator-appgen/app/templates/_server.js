@@ -26,7 +26,9 @@ var config = {
     "localLogin": "<%= localLogin %>",
     "collectioncrud": "<%= collectioncrud %>",
     "collectionschema": "<%= collectionschema %>",
-    "googleFacebookLogin": "<%= googleFacebookLogin %>"
+    "googleFacebookLogin": "<%= googleFacebookLogin %>",
+    "faq": "<%= faq %>",
+    "faqPug": "<%= faqPug %>"
 };
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
@@ -98,8 +100,42 @@ mongoose.connect(configDB.url, function (err, db) {
                 next();
             });
         }
+        if(config.faq=='y'){
+            var res = config.faqPug.split(',')
+            async.each(res, function(item, callback) {
+                console.log('Processing file ' + item);
+                //FAQ
+                var parserFaq = peg.generate(fs.readFileSync('./parsers/parseFaq.pegjs', "utf8"))
+                var resultFaq = pegutil.parse(parserFaq, fs.readFileSync(item, "utf8"))
+                
+      
+                fs.writeFileSync('./views/help.pug', resultFaq.ast,{encoding: 'utf-8'}, function (err) {
+                    if (err) 
+                        throw err;
+                    console.log('Created Faq');
+                });
+
+                console.log('File processed');
+                callback();
+            }, function(err) {
+                // if any of the file processing produced an error, err would equal that error
+                if( err ) {
+                  // One of the iterations produced an error.
+                  // All processing will now stop.
+                  console.log('A file failed to process');
+                } else {
+                  console.log('All files have been processed successfully');
+                }
+            });
+        }else{
+            app.use(function (req, res, next) {
+                res.locals.faq = false;
+                next();
+            });
+        }
         if(config.collectioncrud=='y'){
             var res = config.collectionschema.split(',')
+            var inputs = [];
             async.each(res, function(item, callback) {
                 console.log('Processing file ' + item);
                 //SCHEMA
@@ -123,7 +159,8 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 
                 for (var i = 0; i < resRouter.length; i++) {
-                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1],{encoding: 'utf-8'}, function (err) {
+                    inputs.push(resRouter[i][0]);
+                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], {encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created router: ' + resRouter[i][0]);
@@ -151,6 +188,27 @@ mongoose.connect(configDB.url, function (err, db) {
                     console.log('Created ops: ' + fileOps);
                 });
                 */
+                //VIEWS
+                var menu="";
+                menu = menu + "extends layout\n\n"+
+                              "block content\n" +
+                              "\tlink(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')\n" +
+                              "\t.main.container.text-xs-center\n" +
+                              "\t\th3.display-4.m-b-2 Data insertion\n" +
+                              "\t\tbr\n";
+                for (var i = 0; i < inputs.length; i++) {
+                    menu = menu + "\t\tdiv(class='btn-group')\n"+ 
+                                  "\t\t\ta(class='btn btn-light  disabled')\n" +
+                                  "\t\t\t\ti(class='fa fa-book' style='width:16px; height:24px')\n" +
+                                  "\t\t\ta(class='btn btn-light ' href='/insertmenu/"+inputs[i]+"Form/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
+                                  "\t\tbr\n";
+                    
+                }
+                fs.writeFileSync('./views/insertmenu.pug', menu, {encoding: 'utf-8'}, function (err) {
+                    if (err) 
+                        throw err;
+                    console.log('Created menu');
+                });
 
                 console.log('File processed');
                 callback();
@@ -187,13 +245,15 @@ mongoose.connect(configDB.url, function (err, db) {
         var auth  = require('./app/auth.js')
         var profile = require('./app/profile.js');
         var list = require('./app/list.js');
-        var forms  = require('./app/thoughtRouter.js') //ISTO NAO PODE ESTAR AQUI, TEM DE SER DINAMICO
+        var admin = require('./app/admin.js');
+        var forms  = require('./app/requires.js'); 
 
         app.use('/',index)
         app.use('/auth', auth)
         app.use('/profile', profile);
         app.use('/list', list)
-        app.use('/forms', forms) // E ISTO TAMBEM TEM DE SER DINAMICO
+        app.use('/admin',admin)
+        app.use('/insertmenu', forms);
 
         //error handling
         app.use(function(req, res, next) {
