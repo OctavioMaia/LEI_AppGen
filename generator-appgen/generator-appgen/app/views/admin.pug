@@ -12,8 +12,7 @@ block content
             select(type="text", class="form-control" name="collection")
               option(value="" required) Please select a collection
               option(value="users") Users
-              option(value="posts") Posts
-              option(value="both") Both
+              option(value="posts") Data
             br
             button.btn.btn-primary(type='submit' class='btn-block btn-primary') Export
         form(method='POST' action='/admin/drop')
@@ -22,8 +21,7 @@ block content
             select(type="text", class="form-control" name="collection")
               option(value="" required) Please select a collection
               option(value="users") Users
-              option(value="posts") Posts
-              option(value="both") Both
+              option(value="posts") Data
             br
             button.btn.btn-primary(type='submit' class='btn-block btn-primary') Drop
           br
@@ -36,7 +34,7 @@ block content
             br
           button.btn.btn-primary.btn-block(type='submit') Import
         form#uploadForm(ref='uploadForm' action='/admin/importPosts' method='post' enctype='multipart/form-data')
-          label Import posts: 
+          label Import data: 
           br
           span(class="fa fa-folder-open" aria-hidden="true")
             input(type='file' name='posts' accept=".JSON,.json")

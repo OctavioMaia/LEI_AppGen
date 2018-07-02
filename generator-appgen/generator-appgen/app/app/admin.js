@@ -1,5 +1,5 @@
 var configDB            = require('./../config/database.js');
-
+var User                = require('../models/user');
 var express             = require('express');
 var mongoose            = require('mongoose')
 var fileUpload          = require('express-fileupload');
@@ -65,11 +65,11 @@ router.post('/export', isAdmin, function(req, res, next) {
                 if(!err){
                     collection.find({}).toArray(function(err, data){
                         if(!err){
-                            fs.writeFile('./json/posts.json', JSON.stringify(data), function(err) {
+                            fs.writeFile('./json/data.json', JSON.stringify(data), function(err) {
                                 if (err) {
                                     return console.log(err);
                                 } else {
-                                    var message = "Posts have been exported with success!"
+                                    var message = "Data has been exported with success!"
                                     var href = '/admin'
                                     res.render('success', {
                                         'Title': 'Success!',
@@ -94,29 +94,31 @@ router.post('/export', isAdmin, function(req, res, next) {
 router.post('/drop', isAdmin, function(req, res, next) {
     var db = req.body.collection
     if (db == 'posts') {
-        Post.collection.drop();
-        var message = "Posts have been deleted with success!"
-        var href = '/admin'
-        res.render('success', {
-            'Title': 'Success!',
-            message,
-            href
+        mongoose.Promise = global.Promise
+        mongoose.connect(configDB.url);
+        var connection = mongoose.connection;
+
+        connection.on('error', console.error.bind(console, 'connection error'));
+        connection.once('open', function() {
+            mongoose.connection.db.collection('posts', function(err, collection){
+                if(!err){
+                    collection.drop();
+                    var message = "Data has been deleted with success!"
+                    var href = '/admin'
+                    res.render('success', {
+                        'Title': 'Success!',
+                            message,
+                            href
+                        });                    
+                }else{
+                    console.log(err)
+                }
+            });
         });
     } else if (db == 'users') {
         User.collection.drop();
         req.session.destroy();
         var message = "Users have been deleted with success!"
-        var href = '/'
-        res.render('success', {
-            'Title': 'Success!',
-            message,
-            href
-        });
-    } else if (db == 'both'){
-        User.collection.drop();
-        Post.collection.drop();
-        req.session.destroy();
-        var message = "Both posts and users have been deleted with success!"
         var href = '/'
         res.render('success', {
             'Title': 'Success!',
@@ -153,16 +155,29 @@ router.post('/importPosts', isAdmin, function(req, res, next) {
         return res.status(400).send('No files were uploaded.');
     
     let json = JSON.parse(req.files.posts.data);
-    Post.collection.insert(json, function(err,result) {
-        if (err) {
-            console.log("duplicate entry: " + json)
-        }
-        var message = "Posts have been imported with success!"
-        var href = '/admin'
-        res.render('success', {
-            'Title': 'Success!',
-            message,
-            href
+    mongoose.Promise = global.Promise
+    mongoose.connect(configDB.url);
+    var connection = mongoose.connection;
+
+    connection.on('error', console.error.bind(console, 'connection error'));
+    connection.once('open', function() {
+        mongoose.connection.db.collection('posts', function(err, collection){
+            if(!err){
+                collection.insert(json, function(err,result) {
+                    if (err) {
+                        console.log("duplicate entry: " + json)
+                    }
+                    var message = "Data has been imported with success!"
+                    var href = '/admin'
+                    res.render('success', {
+                        'Title': 'Success!',
+                        message,
+                        href
+                    });
+                });
+            }else{
+                console.log(err)
+            }
         });
     });
 });
