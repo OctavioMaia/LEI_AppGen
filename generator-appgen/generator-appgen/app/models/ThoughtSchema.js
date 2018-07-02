@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema; 
 
 var ThoughtSchema = new Schema({
+	Type : {type: String},
 	Author: {type: String},
 	Identification: {type: String},
 	Location: {type: String},

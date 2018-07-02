@@ -209,6 +209,15 @@ mongoose.connect(configDB.url, function (err, db) {
                         throw err;
                     console.log('Created menu');
                 });
+                
+                var parserList = peg.generate(fs.readFileSync('./parsers/parseList.pegjs', "utf8"))
+                var resultList = pegutil.parse(parserList, fs.readFileSync(item, "utf8"))
+                
+                fs.writeFileSync('./views/list.pug', resultList.ast,{encoding: 'utf-8'}, function (err) {
+                    if (err) 
+                        throw err;
+                    console.log('Created list');
+                });
 
                 console.log('File processed');
                 callback();

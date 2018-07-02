@@ -17,16 +17,14 @@ router.get('/newThoughtSchema', function(req,res){
 });
 
 router.post('/processNewThought', function(req, res, next) {
-	console.log('ENTREI')
-	console.log(req.body)
 	if (req.body) {
-		console.log('ENTREI TYPE')
 		var form;
 		var name;
 
 		form = new schema();
 
 		if(form != undefined){
+			form.Type = 'Thought'
 			form.Author = req.body.Author;
 			form.Identification = req.body.Identification;
 			form.Location = req.body.Location;

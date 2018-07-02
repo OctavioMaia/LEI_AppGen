@@ -17,6 +17,7 @@ router.get('/', function(req, res) {
         mongoose.connection.db.collection('posts', function(err, collection){
             if(!err){
                 collection.find({}).toArray(function(err, data){
+                    console.log(data)
                     if(!err){
                         res.render('list', {
                             title: 'Listing',
@@ -32,5 +33,36 @@ router.get('/', function(req, res) {
         });
     });
 });
+
+router.get('/:filter', function(req, res) {
+    var filt = req.params.filter
+    console.log(filt)
+    mongoose.Promise = global.Promise
+    mongoose.connect(configDB.url);
+    var connection = mongoose.connection;
+
+    connection.on('error', console.error.bind(console, 'connection error:'));
+    connection.once('open', function() {
+        console.log("entrei")
+        mongoose.connection.db.collection('posts', function(err, collection){
+            if(!err){
+                collection.find( {Type:filt} ).toArray(function(err, data){
+                    console.log(data)
+                    if(!err){
+                        res.render('list', {
+                            title: 'Listing',
+                            data: data
+                        });
+                    }
+                    else
+                        console.log(err)
+                })
+            }else{
+                console.log(err)
+            }
+        });
+    });
+});
+
 
 module.exports = router;

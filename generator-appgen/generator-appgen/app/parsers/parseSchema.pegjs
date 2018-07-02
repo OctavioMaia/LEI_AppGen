@@ -34,6 +34,9 @@ ListFields
         write = write + "var mongoose = require('mongoose'); \n" +
     "var Schema   = mongoose.Schema; \n\n";
     	write = write + "var " + type+ "Schema = new Schema({\n";
+        write = write = write + '\t' + "Type : {type: String" + req + "},\n"
+    	  req = "";
+        
         schema = type;
         }
     else if(field=="collection") {collection = type;}
