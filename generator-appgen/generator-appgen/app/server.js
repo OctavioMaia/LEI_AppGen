@@ -142,7 +142,7 @@ mongoose.connect(configDB.url, function (err, db) {
                     console.log('Created router: ' + fileRouter);
                 });
                 //OPERATIONS
-                
+                /*
                 var parserOps = peg.generate(fs.readFileSync('./parsers/parseOps.pegjs', "utf8"))
                 var resultOps = pegutil.parse(parserOps, fs.readFileSync(item, "utf8"))
                 var fileOps = './app/' + item.split('.')[0] + '2.js'
@@ -152,7 +152,7 @@ mongoose.connect(configDB.url, function (err, db) {
                         throw err;
                     console.log('Created ops: ' + fileOps);
                 });
-                
+                */
                 //VIEWS
                 var menu="";
                 menu = menu + "extends layout\n\n"+
