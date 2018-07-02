@@ -1,0 +1,5 @@
+[
+  {"QUESTAO":"RESPOSTA"},
+  {"Is account registration required?":"Account registration at DigitalMe is only required if you're planning on creating posts."},
+  {"Can I submit my own posts?":"Yes!"}
+]
