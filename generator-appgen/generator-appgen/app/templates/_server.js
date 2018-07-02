@@ -35,7 +35,7 @@ var newDBConfig = "mongodb://" + login + config.host + dbport + "/" + config.db;
 
 var str = "module.exports = { 'url' : '" + newDBConfig + "'};"
 
-fs.writeFileSync('./config/database.js', str, function (err) {
+fs.writeFileSync('./config/database.js', str, {encoding: 'utf-8'}, function (err) {
     if (err) 
         throw err;
     console.log('Updated Database config');
@@ -109,7 +109,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 
                 for (var i = 0; i < resSchemas.length; i++) {
-                    fs.writeFileSync('./models/' +resSchemas[i][0]+ 'Schema.js', resSchemas[i][1], function (err) {
+                    fs.writeFileSync('./models/' +resSchemas[i][0]+ 'Schema.js', resSchemas[i][1],{encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created schema: ' + resSchemas[i][0]);
@@ -123,7 +123,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 
                 for (var i = 0; i < resRouter.length; i++) {
-                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], function (err) {
+                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1],{encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created router: ' + resRouter[i][0]);
@@ -134,7 +134,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 var parserReqs = peg.generate(fs.readFileSync('./parsers/parseReqs.pegjs', "utf8"))
                 var resultReqs = pegutil.parse(parserReqs, fs.readFileSync(item, "utf8"))
                 var fileReqs = './app/requires.js'
-                fs.writeFileSync(fileReqs, resultReqs.ast, function (err) {
+                fs.writeFileSync(fileReqs, resultReqs.ast,{encoding: 'utf-8'}, function (err) {
                     if (err) 
                         throw err;
                     console.log('Created router: ' + fileRouter);
@@ -145,7 +145,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 var resultOps = pegutil.parse(parserOps, fs.readFileSync(item, "utf8"))
                 var fileOps = './app/' + item.split('.')[0] + '2.js'
 
-                fs.writeFile(fileOps, resultOps.ast, function (err) {
+                fs.writeFile(fileOps, resultOps.ast, {encoding: 'utf-8'},function (err) {
                     if (err) 
                         throw err;
                     console.log('Created ops: ' + fileOps);
