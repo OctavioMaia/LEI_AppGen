@@ -16,27 +16,26 @@ var configDB     = require('./config/database.js');
 var async        = require("async");
 
 var config = {
-    "appName": "testeadasd",  
+    "appName": "appgen",  
     "db": "appgen",  
     "host": "localhost",  
     "user": "",
     "pw": "",
     "port": "27017",
-    "hasUsers": "y",
-    "localLogin": "y",
+    "hasUsers": "n",
+    "localLogin": "",
     "collectioncrud": "y",
     "collectionschema": "thought.txt",
-    "googleFacebookLogin": "y"
+    "googleFacebookLogin": ""
 };
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
 var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
 var newDBConfig = "mongodb://" + login + config.host + dbport + "/" + config.db;
 
-
 var str = "module.exports = { 'url' : '" + newDBConfig + "'};"
 
-fs.writeFileSync('./config/database.js', str, function (err) {
+fs.writeFileSync('./config/database.js', str, {encoding: 'utf-8'}, function (err) {
     if (err) 
         throw err;
     console.log('Updated Database config');
@@ -101,6 +100,7 @@ mongoose.connect(configDB.url, function (err, db) {
         }
         if(config.collectioncrud=='y'){
             var res = config.collectionschema.split(',')
+            var inputs = [];
             async.each(res, function(item, callback) {
                 console.log('Processing file ' + item);
                 //SCHEMA
@@ -110,7 +110,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 
                 for (var i = 0; i < resSchemas.length; i++) {
-                    fs.writeFileSync('./models/' +resSchemas[i][0]+ 'Schema.js', resSchemas[i][1], function (err) {
+                    fs.writeFileSync('./models/' +resSchemas[i][0]+ 'Schema.js', resSchemas[i][1], {encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created schema: ' + resSchemas[i][0]);
@@ -124,7 +124,8 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 
                 for (var i = 0; i < resRouter.length; i++) {
-                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], function (err) {
+                    inputs.push(resRouter[i][0]);
+                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], {encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created router: ' + resRouter[i][0]);
@@ -135,13 +136,13 @@ mongoose.connect(configDB.url, function (err, db) {
                 var parserReqs = peg.generate(fs.readFileSync('./parsers/parseReqs.pegjs', "utf8"))
                 var resultReqs = pegutil.parse(parserReqs, fs.readFileSync(item, "utf8"))
                 var fileReqs = './app/requires.js'
-                fs.writeFileSync(fileReqs, resultReqs.ast, function (err) {
+                fs.writeFileSync(fileReqs, resultReqs.ast, {encoding: 'utf-8'}, function (err) {
                     if (err) 
                         throw err;
                     console.log('Created router: ' + fileRouter);
                 });
                 //OPERATIONS
-                /*
+                
                 var parserOps = peg.generate(fs.readFileSync('./parsers/parseOps.pegjs', "utf8"))
                 var resultOps = pegutil.parse(parserOps, fs.readFileSync(item, "utf8"))
                 var fileOps = './app/' + item.split('.')[0] + '2.js'
@@ -151,7 +152,28 @@ mongoose.connect(configDB.url, function (err, db) {
                         throw err;
                     console.log('Created ops: ' + fileOps);
                 });
-                */
+                
+                //VIEWS
+                var menu="";
+                menu = menu + "extends layout\n\n"+
+                              "block content\n" +
+                              "\tlink(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')\n" +
+                              "\t.main.container.text-xs-center\n" +
+                              "\t\th3.display-4.m-b-2 Data insertion\n" +
+                              "\t\tbr\n";
+                for (var i = 0; i < inputs.length; i++) {
+                    menu = menu + "\t\tdiv(class='btn-group')\n"+ 
+                                  "\t\t\ta(class='btn btn-light  disabled')\n" +
+                                  "\t\t\t\ti(class='fa fa-book' style='width:16px; height:24px')\n" +
+                                  "\t\t\ta(class='btn btn-light ' href='/forms/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
+                                  "\t\tbr\n";
+                    
+                }
+                fs.writeFileSync('./views/insertmenu.pug', menu, {encoding: 'utf-8'}, function (err) {
+                    if (err) 
+                        throw err;
+                    console.log('Created menu');
+                });
 
                 console.log('File processed');
                 callback();

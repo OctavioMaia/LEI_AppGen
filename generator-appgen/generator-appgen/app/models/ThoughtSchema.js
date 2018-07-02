@@ -13,3 +13,4 @@ var ThoughtSchema = new Schema({
 })
 
  module.exports = mongoose.model('Thought', ThoughtSchema, 'posts');
+
