@@ -100,6 +100,7 @@ mongoose.connect(configDB.url, function (err, db) {
         }
         if(config.collectioncrud=='y'){
             var res = config.collectionschema.split(',')
+            var inputs = [];
             async.each(res, function(item, callback) {
                 console.log('Processing file ' + item);
                 //SCHEMA
@@ -123,7 +124,8 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 
                 for (var i = 0; i < resRouter.length; i++) {
-                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1],{encoding: 'utf-8'}, function (err) {
+                    inputs.push(resRouter[i][0]);
+                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], {encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created router: ' + resRouter[i][0]);
@@ -151,6 +153,27 @@ mongoose.connect(configDB.url, function (err, db) {
                     console.log('Created ops: ' + fileOps);
                 });
                 */
+                //VIEWS
+                var menu="";
+                menu = menu + "extends layout\n\n"+
+                              "block content\n" +
+                              "\tlink(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')\n" +
+                              "\t.main.container.text-xs-center\n" +
+                              "\t\th3.display-4.m-b-2 Data insertion\n" +
+                              "\t\tbr\n";
+                for (var i = 0; i < inputs.length; i++) {
+                    menu = menu + "\t\tdiv(class='btn-group')\n"+ 
+                                  "\t\t\ta(class='btn btn-light  disabled')\n" +
+                                  "\t\t\t\ti(class='fa fa-book' style='width:16px; height:24px')\n" +
+                                  "\t\t\ta(class='btn btn-light ' href='/insertmenu/"+inputs[i]+"Form/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
+                                  "\t\tbr\n";
+                    
+                }
+                fs.writeFileSync('./views/insertmenu.pug', menu, {encoding: 'utf-8'}, function (err) {
+                    if (err) 
+                        throw err;
+                    console.log('Created menu');
+                });
 
                 console.log('File processed');
                 callback();
@@ -187,13 +210,13 @@ mongoose.connect(configDB.url, function (err, db) {
         var auth  = require('./app/auth.js')
         var profile = require('./app/profile.js');
         var list = require('./app/list.js');
-        var forms  = require('./app/thoughtRouter.js') //ISTO NAO PODE ESTAR AQUI, TEM DE SER DINAMICO
+        var forms  = require('./app/requires.js'); 
 
         app.use('/',index)
         app.use('/auth', auth)
         app.use('/profile', profile);
         app.use('/list', list)
-        app.use('/forms', forms) // E ISTO TAMBEM TEM DE SER DINAMICO
+        app.use('/insertmenu', forms);
 
         //error handling
         app.use(function(req, res, next) {
