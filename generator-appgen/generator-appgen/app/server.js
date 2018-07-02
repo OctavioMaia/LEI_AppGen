@@ -16,17 +16,19 @@ var configDB     = require('./config/database.js');
 var async        = require("async");
 
 var config = {
-    "appName": "",  
+    "appName": "abcdef",  
     "db": "appgen",  
     "host": "localhost",  
     "user": "",
     "pw": "",
     "port": "27017",
-    "hasUsers": "n",
-    "localLogin": "",
+    "hasUsers": "y",
+    "localLogin": "y",
     "collectioncrud": "y",
     "collectionschema": "thought.txt",
-    "googleFacebookLogin": ""
+    "googleFacebookLogin": "y",
+    "faq": "y",
+    "faqPug": "testeFAQ.txt"
 };
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
@@ -95,6 +97,39 @@ mongoose.connect(configDB.url, function (err, db) {
         }else{
             app.use(function (req, res, next) {
                 res.locals.hasUsers = false;
+                next();
+            });
+        }
+        if(config.faq=='y'){
+            var res = config.faqPug.split(',')
+            async.each(res, function(item, callback) {
+                console.log('Processing file ' + item);
+                //FAQ
+                var parserFaq = peg.generate(fs.readFileSync('./parsers/parseFaq.pegjs', "utf8"))
+                var resultFaq = pegutil.parse(parserFaq, fs.readFileSync(item, "utf8"))
+                
+      
+                fs.writeFileSync('./views/help.pug', resultFaq.ast,{encoding: 'utf-8'}, function (err) {
+                    if (err) 
+                        throw err;
+                    console.log('Created Faq');
+                });
+
+                console.log('File processed');
+                callback();
+            }, function(err) {
+                // if any of the file processing produced an error, err would equal that error
+                if( err ) {
+                  // One of the iterations produced an error.
+                  // All processing will now stop.
+                  console.log('A file failed to process');
+                } else {
+                  console.log('All files have been processed successfully');
+                }
+            });
+        }else{
+            app.use(function (req, res, next) {
+                res.locals.faq = false;
                 next();
             });
         }
@@ -210,12 +245,14 @@ mongoose.connect(configDB.url, function (err, db) {
         var auth  = require('./app/auth.js')
         var profile = require('./app/profile.js');
         var list = require('./app/list.js');
+        var admin = require('./app/admin.js');
         var forms  = require('./app/requires.js'); 
 
         app.use('/',index)
         app.use('/auth', auth)
         app.use('/profile', profile);
         app.use('/list', list)
+        app.use('/admin',admin)
         app.use('/insertmenu', forms);
 
         //error handling
