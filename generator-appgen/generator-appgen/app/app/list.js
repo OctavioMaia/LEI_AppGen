@@ -92,5 +92,37 @@ router.get('/remove/:id', function(req, res) {
     });
 });
 
+/*
+router.get('/edit/:id', function(req, res) {
+    var id = req.params.id
+    objectID = new ObjectID(id);
+    console.log(id)
+    mongoose.Promise = global.Promise
+    mongoose.connect(configDB.url);
+    var connection = mongoose.connection;
+
+    connection.on('error', console.error.bind(console, 'connection error:'));
+    connection.once('open', function() {
+        console.log("entrei")
+        mongoose.connection.db.collection('posts', function(err, collection){
+            if(!err){
+                collection.find({_id:objectID}).toArray(function(err, data){
+                    console.log(data)
+                    if(!err){
+                        res.render('editForm', {
+                            title: 'Edit',
+                            reqs: data
+                        });
+                    }
+                    else
+                        console.log(err)
+                })
+            }else{
+                console.log(err)
+            }
+        });
+    });
+});
+*/
 
 module.exports = router;

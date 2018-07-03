@@ -16,7 +16,7 @@ var configDB     = require('./config/database.js');
 var async        = require("async");
 
 var config = {
-    "appName": "App",  
+    "appName": "EasyApp",  
     "db": "startapp",  
     "host": "localhost",  
     "user": "",
@@ -27,8 +27,8 @@ var config = {
     "collectioncrud": "y",
     "collectionschema": "crud.txt",
     "googleFacebookLogin": "y",
-    "faq": "n",
-    "faqPug": "n"
+    "faq": "y",
+    "faqPug": "faq.txt"
 };
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';

@@ -1,5 +1,5 @@
 [
-  {"QUESTAO":"RESPOSTA"},
-  {"Is account registration required?":"Account registration at DigitalMe is only required if you're planning on creating posts."},
-  {"Can I submit my own posts?":"Yes!"}
+  {"What is StartApp?":"StartApp is an easy and quick way to get your webapp up and running in no time, thanks to Yeoman and PEG.js!"}, 
+  {"Is the project open-source?":"Yes! You can find our source-code on Github."}, 
+  {"What is the best way to contact you?":"Check our Contact section for more details."} 
 ]

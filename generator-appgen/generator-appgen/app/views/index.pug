@@ -1,13 +1,70 @@
-extends layout
-
-block content
-  .main.container
-    .main.container.text-xs-center
-      br
-      h1 Welcome to 
-      h1= appName
-      br
-      br
-      br
-      h3= appName
-      h3 was promptly generated using Yeoman!
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title StartApp
+    link(rel='stylesheet', href='./../public/stylesheets/bootstrap.min.css', crossorigin='anonymous')
+    link(rel='stylesheet', href='./../public/stylesheets/icon.css')
+    link(rel='stylesheet', href='./../public/stylesheets/font-awesome.css')
+    link(rel='stylesheet', href='./../public/stylesheets/full-slider.css')
+  body
+    include navbar
+    header(class='img-responsive')
+      #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+          li(data-target='#carouselExampleIndicators', data-slide-to='1')
+          li(data-target='#carouselExampleIndicators', data-slide-to='2')
+        .carousel-inner(role='listbox')
+          .carousel-item.active
+            .carousel-caption.d-none.d-md-block
+              .main.container.text-xs-center
+                br
+                br
+                br
+                br
+                img(src='https://corona-cdn.coronalabs.com/mp2/u26646/product-media/icon/pic5abf9cadcf2934_512x-_68722880.png' style='max-width:200px; display: inline-block;' class='img-fluid')
+                br
+                br
+                br
+                h1 Welcome to StartApp!
+                br
+                h2 StartApp is a dynamic web app generator, backed up 
+                h2 by Yeoman and PEG.js
+                br 
+                br
+          .carousel-item
+            .carousel-caption.d-none.d-md-block
+              .main.container.text-xs-center
+                img(src='http://yeoman.io/static/illustration-home-inverted.91b07808be.png' style='display: inline-block;' class='img-fluid')
+                br
+                br
+                h3 Yeoman allows us to kickstart new projects!
+                br
+                h3 To do so, we provide a generator. 
+                br
+                h3 A generator is basically a plugin that can be run with the 'yo' command to scaffold complete projects.
+                br 
+          .carousel-item
+            .carousel-caption.d-none.d-md-block
+              .main.container.text-xs-center
+                br
+                img(src='https://avatars0.githubusercontent.com/u/9988648?s=400&v=4' style='display: inline-block;' class='img-fluid')
+                br
+                h3 PEG.js is a powerful parser generator for JavaScript
+                h3 with excellent error reporting!
+                br 
+                h4 We have used PEG.js extensively during development,
+                h4 as it allowed us to generate modular Schemas,
+                h4 Routers, and other necessary components.
+        a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+    block content
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js', crossorigin='anonymous')
