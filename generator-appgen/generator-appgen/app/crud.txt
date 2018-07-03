@@ -1,0 +1,34 @@
+{
+    entity: [
+        {schema:'Thought'},
+        {collection:'posts'},
+        {Author:String},
+        {Identification:String},
+        {Location:String},
+        {Title:String},
+        {Date:Date},
+        {Description:String},
+        {Keywords:String},
+        {Text:String}
+    ]
+    entity: [
+        {schema:'Wedding'},
+        {collection:'posts'},
+        {Author:String},
+        {Identification:String},
+        {Location:String},
+        {Title:String},
+        {Date:Date},
+        {Groom:String},
+        {Bride:String},
+        {Description:String},
+        {Keywords:String},
+        {Text:String}
+    ]
+    entity: [
+        {schema:'Teste'},
+        {collection:'posts'},
+        {Author:String},
+        {Text:String}
+    ]
+} 

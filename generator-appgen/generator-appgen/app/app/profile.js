@@ -17,7 +17,7 @@ router.post('/upload', function(req, res) {
     let sampleFile = req.files.sampleFile;
     sampleFile.mv('./public/uploads/' + req.user._id + '.jpg', function(err) {
         if (err)
-            return next(err);
+            console.log(err)
         else{
             res.redirect('/profile');
         }

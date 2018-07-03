@@ -112,7 +112,7 @@ module.exports = function(passport) {
                                 );
                                 var mailOptions = {
                                     to: email,
-                                    from: 'registration@appgen.com',
+                                    from: 'registration@startapp.com',
                                     subject: 'Welcome!',
                                     text: 'You are receiving this because you have registered an user account.\n\n' +
                                     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +

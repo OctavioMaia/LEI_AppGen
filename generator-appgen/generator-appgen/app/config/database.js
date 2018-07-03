@@ -1,1 +1,1 @@
-module.exports = { 'url' : 'mongodb://localhost:27017/appgen'};
+module.exports = { 'url' : 'mongodb://localhost:27017/startapp'};

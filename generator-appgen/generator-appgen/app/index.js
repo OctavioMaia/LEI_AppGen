@@ -6,7 +6,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the remarkable ${chalk.red('AppGen')} generator!`)
+      yosay(`Welcome to the remarkable ${chalk.red('StartApp')} generator!`)
     );
 
     const prompts = [
@@ -17,7 +17,7 @@ module.exports = class extends Generator {
       {
         name: 'dbName',
         message: 'Database Name',
-        default: 'appgen'
+        default: 'startapp'
       },
       {
         name: 'dbHost',
@@ -50,8 +50,7 @@ module.exports = class extends Generator {
           return response.collectioncrud=='y';
         },  
         name: 'collectionschema',
-        message: 'Which file(s) should I use to generate the schema? (ensure the file is located in the root folder) ',
-        default: 'example1,example2'
+        message: 'Which file should I use to generate the schema? (ensure the file is located in the root folder) '
       },
       {
         name: 'hasUsers',
@@ -76,7 +75,7 @@ module.exports = class extends Generator {
       },
       {
         name: 'faq',
-        message: 'Do you wish to have a faq section in your app? (y/n) ',
+        message: 'Do you wish to have a FAQ section in your app? (y/n) ',
         default: 'n'
       },
       {
@@ -84,8 +83,7 @@ module.exports = class extends Generator {
           return response.faq=='y';
         },  
         name: 'faqPug',
-        message: 'Which file(s) should I use to generate the faq section? (ensure the file is located in the root folder) ',
-        default: 'example1,example2'
+        message: 'Which file should I use to generate the FAQ section? (ensure the file is located in the root folder) '
       }
     ];
 

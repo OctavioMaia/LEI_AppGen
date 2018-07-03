@@ -9,7 +9,7 @@
    + "\n        span(aria-hidden='true') ×"
    + "\n        span.sr-only Close"
    + "\n      |         This section contains a wealth of information, related to "
-   + "\n      strong AppGen"
+   + "\n      strong StartApp"
    + "\n      |  . If you cannot find an answer to your question,"
    + "\n      |         make sure to contact us."
    + "\n    br"

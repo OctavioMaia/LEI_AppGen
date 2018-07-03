@@ -16,8 +16,8 @@ var configDB     = require('./config/database.js');
 var async        = require("async");
 
 var config = {
-    "appName": "abcdef",  
-    "db": "appgen",  
+    "appName": "abc",  
+    "db": "startapp",  
     "host": "localhost",  
     "user": "",
     "pw": "",
@@ -25,10 +25,10 @@ var config = {
     "hasUsers": "y",
     "localLogin": "y",
     "collectioncrud": "y",
-    "collectionschema": "thought.txt",
+    "collectionschema": "crud.txt",
     "googleFacebookLogin": "y",
     "faq": "y",
-    "faqPug": "testeFAQ.txt"
+    "faqPug": "faq.txt"
 };
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
@@ -50,7 +50,7 @@ mongoose.connect(configDB.url, function (err, db) {
         console.log("Connected to database!")  
         // required for passport
         app.use(session({
-            secret: 'lei-appgen', // session secret
+            secret: 'lei-startapp', // session secret
             resave: true,
             saveUninitialized: true
         }));
@@ -118,10 +118,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 console.log('File processed');
                 callback();
             }, function(err) {
-                // if any of the file processing produced an error, err would equal that error
                 if( err ) {
-                  // One of the iterations produced an error.
-                  // All processing will now stop.
                   console.log('A file failed to process');
                 } else {
                   console.log('All files have been processed successfully');
@@ -142,7 +139,6 @@ mongoose.connect(configDB.url, function (err, db) {
                 var parserSchema = peg.generate(fs.readFileSync('./parsers/parseSchema.pegjs', "utf8"))
                 var resultSchema = pegutil.parse(parserSchema, fs.readFileSync(item, "utf8"))
                 var resSchemas = resultSchema.ast
-                
                 
                 for (var i = 0; i < resSchemas.length; i++) {
                     fs.writeFileSync('./models/' +resSchemas[i][0]+ 'Schema.js', resSchemas[i][1],{encoding: 'utf-8'}, function (err) {
@@ -194,14 +190,14 @@ mongoose.connect(configDB.url, function (err, db) {
                               "block content\n" +
                               "\tlink(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')\n" +
                               "\t.main.container.text-xs-center\n" +
-                              "\t\th3.display-4.m-b-2 Data insertion\n" +
+                              "\t\th3.display-4.m-b-2 Data Insertion\n" +
                               "\t\tbr\n";
                 for (var i = 0; i < inputs.length; i++) {
                     menu = menu + "\t\tdiv(class='btn-group')\n"+ 
                                   "\t\t\ta(class='btn btn-light  disabled')\n" +
                                   "\t\t\t\ti(class='fa fa-book' style='width:16px; height:24px')\n" +
                                   "\t\t\ta(class='btn btn-light ' href='/insertmenu/"+inputs[i]+"Form/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
-                                  "\t\tbr\n";
+                                  "\t\tbr\nbr\n";
                     
                 }
                 fs.writeFileSync('./views/insertmenu.pug', menu, {encoding: 'utf-8'}, function (err) {
@@ -218,14 +214,11 @@ mongoose.connect(configDB.url, function (err, db) {
                         throw err;
                     console.log('Created list');
                 });
-                
+
                 console.log('File processed');
                 callback();
             }, function(err) {
-                // if any of the file processing produced an error, err would equal that error
-                if( err ) {
-                  // One of the iterations produced an error.
-                  // All processing will now stop.
+                if(err) {
                   console.log('A file failed to process');
                 } else {
                   console.log('All files have been processed successfully');
@@ -243,7 +236,6 @@ mongoose.connect(configDB.url, function (err, db) {
         app.use(passport.session()); // persistent login sessions
         
         // view engine setup
-        //console.log(path.join(__dirname, 'views'))
         app.engine('pug', require('pug').__express)
         app.set('views', path.join(__dirname, 'views'));
         app.set('view engine', 'pug');
