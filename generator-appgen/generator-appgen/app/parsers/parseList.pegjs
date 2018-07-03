@@ -78,10 +78,7 @@ ListFields
     if(field=="schema") 
     	{
         schema = type
-        write= write + "\t\t\t.row\n"
-      				 + "\t\t\t.col-lg-2.col-sm-12.left\n"
-        			 + "\t\t\t\tdiv(class=\"btn-group-vertical pull-right\")\n"
-          			 + "\t\t\t\t\ta(href=\"/list/"+type+"\" class=\"btn btn-light\") "+ type +"\n"
+        write= write + "\t\t\t\t\ta(href=\"/list/"+type+"\" class=\"btn btn-light\") "+ type +"\n"
         
         }
     
