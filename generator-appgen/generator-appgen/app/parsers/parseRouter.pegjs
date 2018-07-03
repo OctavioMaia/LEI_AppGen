@@ -37,7 +37,7 @@ List
             write = write + "}\n\t\tschema.collection.insert(form, function(err,docs) {\n\t\t"
             + "if (err) {\n\t\t\tvar message = 'Failed to create form!'"
             + "\n\t\t\tres.render('error', {\n\t\t\t\t'Title': 'Error', \n\t\t\t\t message\n\t\t\t});"
-            + "\n\t\t} else {\n\t\t\tvar message = 'Form created with success!'"
+            + "\n\t\t} else {\n\t\t\tvar message = '" + schema + " inserted with success!'"
             + "\n\t\t\tvar href ='/insertmenu'\n\t\t\tres.render('success',{\n\t\t\t\t'Title': 'Success!',"
             + "\n\t\t\t\tmessage,\n\t\t\t\thref\n\t\t\t});\n\t\t}\n\t\t});"
             + "\n\t}else{\n\t\tvar err = new Error('Unknown Type' + req.body);\n\t\t"

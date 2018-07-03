@@ -16,7 +16,7 @@ var configDB     = require('./config/database.js');
 var async        = require("async");
 
 var config = {
-    "appName": "abc",  
+    "appName": "App",  
     "db": "startapp",  
     "host": "localhost",  
     "user": "",
@@ -27,8 +27,8 @@ var config = {
     "collectioncrud": "y",
     "collectionschema": "crud.txt",
     "googleFacebookLogin": "y",
-    "faq": "y",
-    "faqPug": "faq.txt"
+    "faq": "n",
+    "faqPug": "n"
 };
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
@@ -197,7 +197,7 @@ mongoose.connect(configDB.url, function (err, db) {
                                   "\t\t\ta(class='btn btn-light  disabled')\n" +
                                   "\t\t\t\ti(class='fa fa-book' style='width:16px; height:24px')\n" +
                                   "\t\t\ta(class='btn btn-light ' href='/insertmenu/"+inputs[i]+"Form/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
-                                  "\t\tbr\nbr\n";
+                                  "\t\tbr\n\t\tbr\n";
                     
                 }
                 fs.writeFileSync('./views/insertmenu.pug', menu, {encoding: 'utf-8'}, function (err) {

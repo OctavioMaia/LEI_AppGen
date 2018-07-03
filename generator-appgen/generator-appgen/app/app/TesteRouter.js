@@ -48,7 +48,7 @@ router.post('/processNewTeste', function(req, res, next) {
 				 message
 			});
 		} else {
-			var message = 'Form created with success!'
+			var message = 'Teste inserted with success!'
 			var href ='/insertmenu'
 			res.render('success',{
 				'Title': 'Success!',

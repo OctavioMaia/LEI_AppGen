@@ -42,7 +42,7 @@ router.post('/processNewThought', function(req, res, next) {
 				 message
 			});
 		} else {
-			var message = 'Form created with success!'
+			var message = 'Thought inserted with success!'
 			var href ='/insertmenu'
 			res.render('success',{
 				'Title': 'Success!',

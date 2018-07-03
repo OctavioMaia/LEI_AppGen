@@ -21,17 +21,8 @@ head
 			.col-lg-2.col-sm-12.left
 				div(class="btn-group-vertical pull-right")
 					a(href="/list" class="btn btn-light") All
-			.row
-			.col-lg-2.col-sm-12.left
-				div(class="btn-group-vertical pull-right")
 					a(href="/list/Thought" class="btn btn-light") Thought
-			.row
-			.col-lg-2.col-sm-12.left
-				div(class="btn-group-vertical pull-right")
 					a(href="/list/Wedding" class="btn btn-light") Wedding
-			.row
-			.col-lg-2.col-sm-12.left
-				div(class="btn-group-vertical pull-right")
 					a(href="/list/Teste" class="btn btn-light") Teste
 			.col-lg-9.col-sm-12.right
 				each val in data
@@ -40,9 +31,13 @@ head
 							h4 Author: #{val.Author}
 								a.pull-left(href="")
 									img(alt="image" src='./../public/images/avatar.png')
+								a.pull-right(href='list/remove/'+val._id)
+									img(alt="image" src='https://cdn4.iconfinder.com/data/icons/controls-add-on-flat/48/Contols_-_Add_On-35-512.png')
+								a.pull-right(href='list/edit/'+val._id)
+									img(alt="image" src='https://cdn.icon-icons.com/icons2/317/PNG/512/pencil-icon_34383.png')
 								.media-body
 									if val.Date
-										small.text-muted #{(val.Date).toString().substring(0, 24)}
+										small.text-muted #{(val.Date).toString().substring(0, 16)}
 							.social-body
 								each value,key in val
 									if (key != "_id"&& value != ''&& value != null)

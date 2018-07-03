@@ -197,7 +197,7 @@ mongoose.connect(configDB.url, function (err, db) {
                                   "\t\t\ta(class='btn btn-light  disabled')\n" +
                                   "\t\t\t\ti(class='fa fa-book' style='width:16px; height:24px')\n" +
                                   "\t\t\ta(class='btn btn-light ' href='/insertmenu/"+inputs[i]+"Form/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
-                                  "\t\tbr\nbr\n";
+                                  "\t\tbr\n\t\tbr\n";
                     
                 }
                 fs.writeFileSync('./views/insertmenu.pug', menu, {encoding: 'utf-8'}, function (err) {
