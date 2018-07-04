@@ -12,7 +12,7 @@
                     +"\tmeta(charset='utf-8')\n"
                     +"\tmeta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')\n"
                     +"\tmeta(http-equiv='x-ua-compatible', content='ie=edge')\n"
-                    +"\ttitle StartApp\n"
+                    +"\ttitle= appName\n"
                     +"\tlink(rel='stylesheet', href='../public/stylesheets/bootstrap.min.css', crossorigin='anonymous')\n"
                     +"\tlink(rel='stylesheet', href='../public/stylesheets/icon.css')\n"
                     +"\tlink(rel='stylesheet', href='../public/stylesheets/font-awesome.css')\n"
