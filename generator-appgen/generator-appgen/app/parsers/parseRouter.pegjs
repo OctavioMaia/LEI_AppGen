@@ -4,14 +4,14 @@
   	var write = "";
     var comma = "";
     var result=[];
-    var fields = [];
+    var fields =[];
     var i = 0;
     var edit = "";
     }
 Col
 	= "{" _ ColOp+ _ "}" _
     {
-
+	
     return result ;
 	}
     
@@ -61,7 +61,7 @@ List
 			+ "\n\t\t\t\t\t\thref:'/insertmenu/" + schema + "Form/edit" + schema + "/'+id"	
             + "\n\t\t\t\t\t});\n\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t\tconsole.log(err)"
             + "\n\t\t\t\t})\n\t\t\t}else{\n\t\t\t\tconsole.log(err)\n\t\t\t}\n\t\t});\n\t});\n});"
-            edit = edit + "router.post('/edit"+ schema + "/:id', function(req, res, next) {"
+            edit = edit + "\nrouter.post('/edit"+ schema + "/:id', function(req, res, next) {"
             + "\n\tvar id = req.params.id\n\tif (req.body) {\n\t\tvar form;\n\t\tvar name;"
             + "\n\t\tform = new schema();\n\t\tobjectID = new ObjectID(id);"
 		    + "\n\t\tmongoose.Promise = global.Promise\n\t\tmongoose.connect(configDB.url);"
@@ -99,6 +99,7 @@ List
 			+ "\n\t}else{\n\t\tvar err = new Error('Unknown Type' + req.body);"
 		    + "\n\t\terr.status = 404;\n\t\tnext(err);\n\t}\n});"
             write = write + edit;
+            edit = "";
             write = write + "\n\nmodule.exports = router;"
             //}}}}}}}}}}}}}}}}}
     }
