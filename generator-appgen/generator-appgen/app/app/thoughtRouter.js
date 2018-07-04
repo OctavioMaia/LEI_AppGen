@@ -64,46 +64,41 @@ router.post('/processNewThought', function(req, res, next) {
 
 router.get('/editThoughtSchema/:id', function(req,res){
 	var id = req.params.id
-    objectID = new ObjectID(id);
-    mongoose.Promise = global.Promise
-    mongoose.connect(configDB.url);
-    var connection = mongoose.connection;
-
-    connection.on('error', console.error.bind(console, 'connection error:'));
-    connection.once('open', function() {
-        mongoose.connection.db.collection('posts', function(err, collection){
-            if(!err){
-                collection.find({_id:objectID}).toArray(function(err, data){
-                    if(!err){
-                        res.render('editForm', {
-                            title: 'Edit',
-							reqs: data[0],
-							href:'/insertmenu/ThoughtForm/editThought/'+id	
-                        });
-                    }
-                    else
-                        console.log(err)
-                })
-            }else{
-                console.log(err)
-            }
-        });
-    });
+	objectID = new ObjectID(id);
+	mongoose.Promise = global.Promise
+	mongoose.connect(configDB.url);
+	var connection = mongoose.connection;
+	connection.on('error', console.error.bind(console, 'connection error:'));
+	connection.once('open', function() {
+		mongoose.connection.db.collection('posts', function(err, collection){
+			if(!err){
+			collection.find({_id:objectID}).toArray(function(err, data){
+				if(!err){
+					res.render('editForm', {
+						title: 'Edit',
+						reqs: data[0],
+						href:'/insertmenu/ThoughtForm/editThought/'+id
+					});
+					}
+					else
+						console.log(err)
+				})
+			}else{
+				console.log(err)
+			}
+		});
+	});
 });
-
 router.post('/editThought/:id', function(req, res, next) {
-	console.log('entrei aqui')
 	var id = req.params.id
 	if (req.body) {
 		var form;
 		var name;
-
 		form = new schema();
 		objectID = new ObjectID(id);
 		mongoose.Promise = global.Promise
 		mongoose.connect(configDB.url);
 		var connection = mongoose.connection;
-	
 		connection.on('error', console.error.bind(console, 'connection error:'));
 		connection.once('open', function() {
 			mongoose.connection.db.collection('posts', function(err, collection){
@@ -111,22 +106,22 @@ router.post('/editThought/:id', function(req, res, next) {
 					collection.find({_id:objectID}).toArray(function(err, data){
 						if(!err){
 							if(form != undefined){
-								form.Type = data[0].Type;
-								form.Author = req.body.Author;
+								form.Type = data[0].Type;form.Author = req.body.Author;
 								form.Identification = req.body.Identification;
 								form.Location = req.body.Location;
 								form.Title = req.body.Title;
-								form.Date = data[0].Date;
+								form.Date = req.body.Date;
 								form.Description = req.body.Description;
 								form.Keywords = req.body.Keywords;
 								form.Text = req.body.Text;
+								
 							}
 							collection.remove({_id:objectID})
 							schema.collection.insert(form, function(err,docs) {
 								if (err) {
 									var message = 'Failed to edit form!'
 									res.render('error', {
-										'Title': 'Error', 
+										'Title': 'Error',
 										message
 									});
 								} else {

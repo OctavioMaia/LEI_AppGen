@@ -156,11 +156,11 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 for (var i = 0; i < resRouter.length; i++) {
                     inputs.push(resRouter[i][0]);
-                    /*fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], {encoding: 'utf-8'}, function (err) {
+                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], {encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created router: ' + resRouter[i][0]);
-                    });*/
+                    });
                 }
                 
                 //REQUIRES
@@ -172,18 +172,7 @@ mongoose.connect(configDB.url, function (err, db) {
                         throw err;
                     console.log('Created router: ' + fileRouter);
                 });
-                //OPERATIONS
-                /*
-                var parserOps = peg.generate(fs.readFileSync('./parsers/parseOps.pegjs', "utf8"))
-                var resultOps = pegutil.parse(parserOps, fs.readFileSync(item, "utf8"))
-                var fileOps = './app/' + item.split('.')[0] + '2.js'
 
-                fs.writeFile(fileOps, resultOps.ast, {encoding: 'utf-8'},function (err) {
-                    if (err) 
-                        throw err;
-                    console.log('Created ops: ' + fileOps);
-                });
-                */
                 //VIEWS
                 var menu="";
                 menu = menu + "extends layout\n\n"+
