@@ -16,7 +16,7 @@ var configDB     = require('./config/database.js');
 var async        = require("async");
 
 var config = {
-    "appName": "EasyApp",  
+    "appName": "adasda",  
     "db": "startapp",  
     "host": "localhost",  
     "user": "",
@@ -27,8 +27,8 @@ var config = {
     "collectioncrud": "y",
     "collectionschema": "crud.txt",
     "googleFacebookLogin": "y",
-    "faq": "y",
-    "faqPug": "faq.txt"
+    "faq": "n",
+    "faqPug": ""
 };
 
 var dbport = (config.port.length > 0) ? ":" + config.port : '';
@@ -156,11 +156,11 @@ mongoose.connect(configDB.url, function (err, db) {
                 
                 for (var i = 0; i < resRouter.length; i++) {
                     inputs.push(resRouter[i][0]);
-                    fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], {encoding: 'utf-8'}, function (err) {
+                    /*fs.writeFileSync('./app/' +resRouter[i][0]+ 'Router.js', resRouter[i][1], {encoding: 'utf-8'}, function (err) {
                         if (err) 
                             throw err;
                         console.log('Created router: ' + resRouter[i][0]);
-                    });
+                    });*/
                 }
                 
                 //REQUIRES
@@ -194,9 +194,9 @@ mongoose.connect(configDB.url, function (err, db) {
                               "\t\tbr\n";
                 for (var i = 0; i < inputs.length; i++) {
                     menu = menu + "\t\tdiv(class='btn-group')\n"+ 
-                                  "\t\t\ta(class='btn btn-light  disabled')\n" +
+                                  "\t\t\ta(class='btn btn-light2  disabled')\n" +
                                   "\t\t\t\ti(class='fa fa-book' style='width:16px; height:24px')\n" +
-                                  "\t\t\ta(class='btn btn-light ' href='/insertmenu/"+inputs[i]+"Form/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
+                                  "\t\t\ta(class='btn btn-light2 ' href='/insertmenu/"+inputs[i]+"Form/new"+inputs[i]+"Schema' style='width:12em;') New "+inputs[i]+"\n" +
                                   "\t\tbr\n\t\tbr\n";
                     
                 }
