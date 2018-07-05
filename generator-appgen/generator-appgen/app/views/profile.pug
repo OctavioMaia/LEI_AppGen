@@ -19,29 +19,29 @@ block content
                     input(type='file' name='sampleFile' accept=".jpg,.png,.JPG,.PNG" )
                   button.btn.btn-primary.btn-block(type='submit') Upload!
               .col-xs-12.col-sm-8.center
-                h4.blue
+                h4
                   span.middle #{user.name}
                   span.label.arrowed-in-right
                     i.ace-icon.fa.fa-circle.smaller-80
                     | 									online
                 .profile-user-info
                   .profile-info-row
-                    .profile-info-name Email 
+                    .profile-info-name.white Email 
                       i.fa.fa-envelope.white
                     .profile-info-value
                       span #{user.email}
                   .profile-info-row
-                    .profile-info-name Age 
+                    .profile-info-name.white Age 
                       i.fa.fa-calendar.white
                     .profile-info-value
                       span #{user.age}
                   .profile-info-row
-                    .profile-info-name  Address 
+                    .profile-info-name.white  Address 
                       i.fa.fa-map-marker.white
                     .profile-info-value
                       span #{user.address}
                   .profile-info-row
-                    .profile-info-name Gender 
+                    .profile-info-name.white Gender 
                       if user.gender == 'Female'
                         i.fa.fa-female.white
                       else
@@ -49,17 +49,17 @@ block content
                     .profile-info-value
                       span #{user.gender}
                   .profile-info-row
-                    .profile-info-name Ocupation 
+                    .profile-info-name.white Ocupation 
                       i.fa.fa-cogs.white
                     .profile-info-value
                       span #{user.profession}
                   .profile-info-row
-                    .profile-info-name Cellphone 
+                    .profile-info-name.white Cellphone 
                       i.fa.fa-phone.white
                     .profile-info-value
                       span #{user.cnumber}
                   .profile-info-row
-                    .profile-info-name Type 
+                    .profile-info-name.white Type 
                       i.fa.fa-flag.white
                     .profile-info-value
                       span #{user.type}

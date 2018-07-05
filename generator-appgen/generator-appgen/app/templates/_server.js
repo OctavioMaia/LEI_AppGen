@@ -24,7 +24,6 @@ var config = {
     "port": "<%= dbPort %>",
     "hasUsers": "<%= hasUsers %>",
     "localLogin": "<%= localLogin %>",
-    "collectioncrud": "<%= collectioncrud %>",
     "collectionschema": "<%= collectionschema %>",
     "googleFacebookLogin": "<%= googleFacebookLogin %>",
     "faq": "<%= faq %>",
@@ -101,6 +100,11 @@ mongoose.connect(configDB.url, function (err, db) {
             });
         }
         if(config.faq=='y'){
+            app.use(function (req, res, next) {
+                res.locals.faq = true;
+                next();
+            });
+
             var res = config.faqPug.split(',')
             async.each(res, function(item, callback) {
                 console.log('Processing file ' + item);
@@ -130,7 +134,7 @@ mongoose.connect(configDB.url, function (err, db) {
                 next();
             });
         }
-        if(config.collectioncrud=='y'){
+        if(config.collectionschema!=''){
             var res = config.collectionschema.split(',')
             var inputs = [];
             async.each(res, function(item, callback) {

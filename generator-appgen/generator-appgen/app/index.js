@@ -41,16 +41,22 @@ module.exports = class extends Generator {
         default: 27017
       },
       {
-        name: 'collectioncrud',
-        message: 'Should I create CRUD methods? (y/n) ',
-        default: 'y'
+        name: 'collectionschema',
+        message: 'Which file should I use to generate CRUD methods? (ensure the file is located in the root folder) ',
+        default: 'crud.txt'
+      },
+      {
+        name: 'faq',
+        message: 'Do you wish to have a FAQ section in your app? (y/n) ',
+        default: 'n'
       },
       {
         when: function (response) {
-          return response.collectioncrud=='y';
+          return response.faq=='y';
         },  
-        name: 'collectionschema',
-        message: 'Which file should I use to generate the schema? (ensure the file is located in the root folder) '
+        name: 'faqPug',
+        message: 'Which file should I use to generate the FAQ section? (ensure the file is located in the root folder) ',
+        default: 'faq.txt'
       },
       {
         name: 'hasUsers',
@@ -72,18 +78,6 @@ module.exports = class extends Generator {
         name: 'googleFacebookLogin',
         message: 'Should I implement login functions via Google+ and Facebook? (y/n) ',
         default: 'n'
-      },
-      {
-        name: 'faq',
-        message: 'Do you wish to have a FAQ section in your app? (y/n) ',
-        default: 'n'
-      },
-      {
-        when: function (response) {
-          return response.faq=='y';
-        },  
-        name: 'faqPug',
-        message: 'Which file should I use to generate the FAQ section? (ensure the file is located in the root folder) '
       }
     ];
 
@@ -94,7 +88,6 @@ module.exports = class extends Generator {
       this.dbUser = props.dbUser;
       this.dbPassword = props.dbPassword;
       this.dbPort = props.dbPort;
-      this.collectioncrud = props.collectioncrud;
       this.collectionschema = props.collectionschema;
       this.localLogin = props.localLogin;
       this.googleFacebookLogin = props.googleFacebookLogin;
@@ -116,7 +109,6 @@ module.exports = class extends Generator {
         dbUser: this.dbUser,
         dbPort: this.dbPort,
         dbPassword: this.dbPassword,
-        collectioncrud: this.collectioncrud,
         collectionschema: this.collectionschema,
         localLogin: this.localLogin,
         googleFacebookLogin: this.googleFacebookLogin,

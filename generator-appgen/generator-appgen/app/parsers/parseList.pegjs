@@ -43,7 +43,7 @@
             +"\t\t\t\t\t\t\t\t\timg(alt=\"image\" src='https://cdn.icon-icons.com/icons2/317/PNG/512/pencil-icon_34383.png')\n"
             +"\t\t\t\t\t\t\t\t.media-body\n"
             +"\t\t\t\t\t\t\t\t\tif val.Date\n"
-            +"\t\t\t\t\t\t\t\t\t\tsmall.text-muted #{(val.Date).toString().substring(0, 16)}\n"
+            +"\t\t\t\t\t\t\t\t\t\tsmall.text-muted.white #{(val.Date).toString().substring(0, 16)}\n"
             +"\t\t\t\t\t\t\t.social-body\n"
             +"\t\t\t\t\t\t\t\teach value,key in val\n"
             +"\t\t\t\t\t\t\t\t\tif (key != \"_id\"&& value != ''&& value != null && key!='Author' && key!='Date')\n"
